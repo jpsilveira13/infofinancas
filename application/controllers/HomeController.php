@@ -1,7 +1,13 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
 /**
- * Created by PhpStorm.
- * User: Aluno
- * Date: 19/11/2015
- * Time: 20:03
+ * Class HomeController
  */
+class HomeController extends CI_Controller {
+
+    public function index()
+    {
+        $this->load->view('home');
+    }
+}
