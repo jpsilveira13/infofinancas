@@ -24,16 +24,25 @@
 
 <body>
 <div id="wrapper">
+
+    <!-- Menu Lateral -->
     <nav class="navbar-default navbar-static-side" role="navigation">
         <div class="sidebar-collapse">
+
             <ul class="nav" id="side-menu">
+
                 <li class="nav-header">
-                    <div class="dropdown profile-element"> <span>
-                            <img alt="image" class="img-circle" src="assets/img/profile_small.jpg" />
-                             </span>
+                    <div class="dropdown profile-element">
+
+                        <!-- Foto Perfil -->
+                        <span><img alt="image" class="img-circle" src="assets/img/profile_small.jpg"/></span>
+
+                        <!-- Dados Perfil -->
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">David Williams</strong>
-                             </span> <span class="text-muted text-xs block">Art Director <b class="caret"></b></span> </span> </a>
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Nome usuário</strong>
+                             </span> <span class="text-muted text-xs block">Dados Perfil <b class="caret"></b></span> </span> </a>
+
+                        <!-- Menu Perfil -->
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
                             <li><a href="assets/profile.html">Profile</a></li>
                             <li><a href="assets/contacts.html">Contacts</a></li>
@@ -41,179 +50,32 @@
                             <li class="divider"></li>
                             <li><a href="assets/login.html">Logout</a></li>
                         </ul>
-                    </div>
-                    <div class="logo-element">
-                        IN+
+
                     </div>
                 </li>
-                <li class="active">
-                    <a href="assets/index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span> <span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li class="active"><a href="index.html">Dashboard v.1</a></li>
-                        <li ><a href="assets/dashboard_2.html">Dashboard v.2</a></li>
-                        <li ><a href="assets/dashboard_3.html">Dashboard v.3</a></li>
-                        <li ><a href="assets/dashboard_4_1.html">Dashboard v.4</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="assets/layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span> <span class="label label-primary pull-right">NEW</span></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Graphs</span><span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li><a href="assets/graph_flot.html">Flot Charts</a></li>
-                        <li><a href="assets/graph_morris.html">Morris.js Charts</a></li>
-                        <li><a href="assets/graph_rickshaw.html">Rickshaw Charts</a></li>
-                        <li><a href="assets/graph_chartjs.html">Chart.js</a></li>
-                        <li><a href="assets/graph_peity.html">Peity Charts</a></li>
-                        <li><a href="assets/graph_sparkline.html">Sparkline Charts</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="assets/mailbox.html"><i class="fa fa-envelope"></i> <span class="nav-label">Mailbox </span><span class="label label-warning pull-right">16/24</span></a>
-                    <ul class="nav nav-second-level">
-                        <li><a href="assets/mailbox.html">Inbox</a></li>
-                        <li><a href="assets/mail_detail.html">Email view</a></li>
-                        <li><a href="assets/mail_compose.html">Compose email</a></li>
-                        <li><a href="assets/email_template.html">Email templates</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="assets/widgets.html"><i class="fa fa-flask"></i> <span class="nav-label">Widgets</span> </a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">Forms</span><span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li><a href="assets/form_basic.html">Basic form</a></li>
-                        <li><a href="assets/form_advanced.html">Advanced Plugins</a></li>
-                        <li><a href="assets/form_wizard.html">Wizard</a></li>
-                        <li><a href="assets/form_file_upload.html">File Upload</a></li>
-                        <li><a href="assets/form_editors.html">Text Editor</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-desktop"></i> <span class="nav-label">App Views</span>  <span class="pull-right label label-primary">SPECIAL</span></a>
-                    <ul class="nav nav-second-level">
-                        <li><a href="assets/contacts.html">Contacts</a></li>
-                        <li><a href="assets/profile.html">Profile</a></li>
-                        <li><a href="assets/projects.html">Projects</a></li>
-                        <li><a href="assets/project_detail.html">Project detail</a></li>
-                        <li><a href="assets/file_manager.html">File manager</a></li>
-                        <li><a href="assets/calendar.html">Calendar</a></li>
-                        <li><a href="assets/faq.html">FAQ</a></li>
-                        <li><a href="assets/timeline.html">Timeline</a></li>
-                        <li><a href="assets/pin_board.html">Pin board</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span><span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li><a href="assets/search_results.html">Search results</a></li>
-                        <li><a href="assets/lockscreen.html">Lockscreen</a></li>
-                        <li><a href="assets/invoice.html">Invoice</a></li>
-                        <li><a href="assets/login.html">Login</a></li>
-                        <li><a href="assets/login_two_columns.html">Login v.2</a></li>
-                        <li><a href="assets/register.html">Register</a></li>
-                        <li><a href="assets/404.html">404 Page</a></li>
-                        <li><a href="assets/500.html">500 Page</a></li>
-                        <li><a href="assets/empty_page.html">Empty page</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-globe"></i> <span class="nav-label">Miscellaneous</span><span class="label label-info pull-right">NEW</span></a>
-                    <ul class="nav nav-second-level">
-                        <li><a href="assets/toastr_notifications.html">Notification</a></li>
-                        <li><a href="assets/nestable_list.html">Nestable list</a></li>
-                        <li><a href="assets/timeline_2.html">Timeline v.2</a></li>
-                        <li><a href="assets/forum_main.html">Forum view</a></li>
-                        <li><a href="assets/google_maps.html">Google maps</a></li>
-                        <li><a href="assets/code_editor.html">Code editor</a></li>
-                        <li><a href="assets/modal_window.html">Modal window</a></li>
-                        <li><a href="assets/validation.html">Validation</a></li>
-                        <li><a href="assets/tree_view.html">Tree view</a></li>
-                        <li><a href="assets/chat_view.html">Chat view</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-flask"></i> <span class="nav-label">UI Elements</span><span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li><a href="assets/typography.html">Typography</a></li>
-                        <li><a href="assets/icons.html">Icons</a></li>
-                        <li><a href="assets/draggable_panels.html">Draggable Panels</a></li>
-                        <li><a href="assets/buttons.html">Buttons</a></li>
-                        <li><a href="assets/video.html">Video</a></li>
-                        <li><a href="assets/tabs_panels.html">Tabs & Panels</a></li>
-                        <li><a href="assets/notifications.html">Notifications & Tooltips</a></li>
-                        <li><a href="assets/badges_labels.html">Badges, Labels, Progress</a></li>
-                    </ul>
-                </li>
 
                 <li>
-                    <a href="assets/grid_options.html"><i class="fa fa-laptop"></i> <span class="nav-label">Grid options</span></a>
+                    <!-- Calendario aqui -->
                 </li>
-                <li>
-                    <a href="#"><i class="fa fa-table"></i> <span class="nav-label">Tables</span><span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li><a href="assets/table_basic.html">Static Tables</a></li>
-                        <li><a href="assets/table_data_tables.html">Data Tables</a></li>
-                        <li><a href="assets/jq_grid.html">jqGrid</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-picture-o"></i> <span class="nav-label">Gallery</span><span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li><a href="assets/basic_gallery.html">Lightbox Gallery</a></li>
-                        <li><a href="assets/carousel.html">Bootstrap Carusela</a></li>
 
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-sitemap"></i> <span class="nav-label">Menu Levels </span><span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li>
-                            <a href="#">Third Level <span class="fa arrow"></span></a>
-                            <ul class="nav nav-third-level">
-                                <li>
-                                    <a href="#">Third Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Third Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Third Level Item</a>
-                                </li>
-
-                            </ul>
-                        </li>
-                        <li><a href="#">Second Level Item</a></li>
-                        <li>
-                            <a href="#">Second Level Item</a></li>
-                        <li>
-                            <a href="#">Second Level Item</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="assets/css_animation.html"><i class="fa fa-magic"></i> <span class="nav-label">CSS Animations </span><span class="label label-info pull-right">62</span></a>
-                </li>
-                <li class="landing_link">
-                    <a target="_blank" href="assets/Landing_page/index.html"><i class="fa fa-star"></i> <span class="nav-label">Landing Page</span> <span class="label label-warning pull-right">NEW</span></a>
-                </li>
-                <li class="special_link">
-                    <a href="assets/package.html"><i class="fa fa-database"></i> <span class="nav-label">Package</span></a>
-                </li>
             </ul>
 
         </div>
     </nav>
 
+    <!-- Corpo -->
     <div id="page-wrapper" class="gray-bg dashbard-1">
+
         <div class="row border-bottom">
             <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
                 <div class="navbar-header">
-                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i>
+                    </a>
+
                     <form role="search" class="navbar-form-custom" method="post" action="assets/search_results.html">
                         <div class="form-group">
-                            <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
+                            <input type="text" placeholder="Search for something..." class="form-control"
+                                   name="top-search" id="top-search">
                         </div>
                     </form>
                 </div>
@@ -223,7 +85,7 @@
                     </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                            <i class="fa fa-envelope"></i>  <span class="label label-warning">16</span>
+                            <i class="fa fa-envelope"></i> <span class="label label-warning">16</span>
                         </a>
                         <ul class="dropdown-menu dropdown-messages">
                             <li>
@@ -231,9 +93,11 @@
                                     <a href="assets/profile.html" class="pull-left">
                                         <img alt="image" class="img-circle" src="assets/img/a7.jpg">
                                     </a>
+
                                     <div class="media-body">
                                         <small class="pull-right">46h ago</small>
-                                        <strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>. <br>
+                                        <strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>.
+                                        <br>
                                         <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
                                     </div>
                                 </div>
@@ -244,9 +108,11 @@
                                     <a href="assets/profile.html" class="pull-left">
                                         <img alt="image" class="img-circle" src="assets/img/a4.jpg">
                                     </a>
+
                                     <div class="media-body ">
                                         <small class="pull-right text-navy">5h ago</small>
-                                        <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica Smith</strong>. <br>
+                                        <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica
+                                            Smith</strong>. <br>
                                         <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
                                     </div>
                                 </div>
@@ -257,6 +123,7 @@
                                     <a href="assets/profile.html" class="pull-left">
                                         <img alt="image" class="img-circle" src="assets/img/profile.jpg">
                                     </a>
+
                                     <div class="media-body ">
                                         <small class="pull-right">23h ago</small>
                                         <strong>Monica Smith</strong> love <strong>Kim Smith</strong>. <br>
@@ -276,7 +143,7 @@
                     </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                            <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
+                            <i class="fa fa-bell"></i> <span class="label label-primary">8</span>
                         </a>
                         <ul class="dropdown-menu dropdown-alerts">
                             <li>
@@ -327,6 +194,7 @@
 
             </nav>
         </div>
+
         <div class="row  border-bottom white-bg dashboard-header">
 
             <div class="col-sm-3">
@@ -392,17 +260,19 @@
                     <h4>
                         Project Beta progress
                     </h4>
+
                     <p>
                         You have two project with not compleated task.
                     </p>
+
                     <div class="row text-center">
                         <div class="col-lg-6">
                             <canvas id="polarChart" width="80" height="80"></canvas>
-                            <h5 >Kolter</h5>
+                            <h5>Kolter</h5>
                         </div>
                         <div class="col-lg-6">
                             <canvas id="doughnutChart" width="78" height="78"></canvas>
-                            <h5 >Maxtor</h5>
+                            <h5>Maxtor</h5>
                         </div>
                     </div>
                     <div class="m-t">
@@ -413,6 +283,7 @@
             </div>
 
         </div>
+
         <div class="row">
             <div class="col-lg-12">
                 <div class="wrapper wrapper-content">
@@ -421,6 +292,7 @@
                             <div class="ibox float-e-margins">
                                 <div class="ibox-title">
                                     <h5>New data for the report</h5> <span class="label label-primary">IN+</span>
+
                                     <div class="ibox-tools">
                                         <a class="collapse-link">
                                             <i class="fa fa-chevron-up"></i>
@@ -450,7 +322,8 @@
                                         </div>
                                         <h4>NYS report new data!
                                             <br/>
-                                            <small class="m-r"><a href="assets/graph_flot.html"> Check the stock price! </a> </small>
+                                            <small class="m-r"><a href="assets/graph_flot.html"> Check the stock
+                                                    price! </a></small>
                                         </h4>
                                     </div>
                                 </div>
@@ -458,6 +331,7 @@
                             <div class="ibox float-e-margins">
                                 <div class="ibox-title">
                                     <h5>Read below comments and tweets</h5>
+
                                     <div class="ibox-tools">
                                         <a class="collapse-link">
                                             <i class="fa fa-chevron-up"></i>
@@ -479,31 +353,44 @@
                                 <div class="ibox-content no-padding">
                                     <ul class="list-group">
                                         <li class="list-group-item">
-                                            <p><a class="text-info" href="#">@Alan Marry</a> I belive that. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                            <small class="block text-muted"><i class="fa fa-clock-o"></i> 1 minuts ago</small>
+                                            <p><a class="text-info" href="#">@Alan Marry</a> I belive that. Lorem Ipsum
+                                                is simply dummy text of the printing and typesetting industry.</p>
+                                            <small class="block text-muted"><i class="fa fa-clock-o"></i> 1 minuts ago
+                                            </small>
                                         </li>
                                         <li class="list-group-item">
-                                            <p><a class="text-info" href="#">@Stock Man</a> Check this stock chart. This price is crazy! </p>
+                                            <p><a class="text-info" href="#">@Stock Man</a> Check this stock chart. This
+                                                price is crazy! </p>
+
                                             <div class="text-center m">
                                                 <span id="sparkline8"></span>
                                             </div>
-                                            <small class="block text-muted"><i class="fa fa-clock-o"></i> 2 hours ago</small>
+                                            <small class="block text-muted"><i class="fa fa-clock-o"></i> 2 hours ago
+                                            </small>
                                         </li>
                                         <li class="list-group-item">
-                                            <p><a class="text-info" href="#">@Kevin Smith</a> Lorem ipsum unknown printer took a galley </p>
-                                            <small class="block text-muted"><i class="fa fa-clock-o"></i> 2 minuts ago</small>
+                                            <p><a class="text-info" href="#">@Kevin Smith</a> Lorem ipsum unknown
+                                                printer took a galley </p>
+                                            <small class="block text-muted"><i class="fa fa-clock-o"></i> 2 minuts ago
+                                            </small>
                                         </li>
                                         <li class="list-group-item ">
-                                            <p><a class="text-info" href="#">@Jonathan Febrick</a> The standard chunk of Lorem Ipsum</p>
-                                            <small class="block text-muted"><i class="fa fa-clock-o"></i> 1 hour ago</small>
+                                            <p><a class="text-info" href="#">@Jonathan Febrick</a> The standard chunk of
+                                                Lorem Ipsum</p>
+                                            <small class="block text-muted"><i class="fa fa-clock-o"></i> 1 hour ago
+                                            </small>
                                         </li>
                                         <li class="list-group-item">
-                                            <p><a class="text-info" href="#">@Alan Marry</a> I belive that. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                            <small class="block text-muted"><i class="fa fa-clock-o"></i> 1 minuts ago</small>
+                                            <p><a class="text-info" href="#">@Alan Marry</a> I belive that. Lorem Ipsum
+                                                is simply dummy text of the printing and typesetting industry.</p>
+                                            <small class="block text-muted"><i class="fa fa-clock-o"></i> 1 minuts ago
+                                            </small>
                                         </li>
                                         <li class="list-group-item">
-                                            <p><a class="text-info" href="#">@Kevin Smith</a> Lorem ipsum unknown printer took a galley </p>
-                                            <small class="block text-muted"><i class="fa fa-clock-o"></i> 2 minuts ago</small>
+                                            <p><a class="text-info" href="#">@Kevin Smith</a> Lorem ipsum unknown
+                                                printer took a galley </p>
+                                            <small class="block text-muted"><i class="fa fa-clock-o"></i> 2 minuts ago
+                                            </small>
                                         </li>
                                     </ul>
                                 </div>
@@ -513,6 +400,7 @@
                             <div class="ibox float-e-margins">
                                 <div class="ibox-title">
                                     <h5>Your daily feed</h5>
+
                                     <div class="ibox-tools">
                                         <span class="label label-warning-light">10 Messages</span>
                                     </div>
@@ -526,6 +414,7 @@
                                                 <a href="assets/profile.html" class="pull-left">
                                                     <img alt="image" class="img-circle" src="assets/img/profile.jpg">
                                                 </a>
+
                                                 <div class="media-body ">
                                                     <small class="pull-right">5m ago</small>
                                                     <strong>Monica Smith</strong> posted a new blog. <br>
@@ -538,9 +427,11 @@
                                                 <a href="assets/profile.html" class="pull-left">
                                                     <img alt="image" class="img-circle" src="assets/img/a2.jpg">
                                                 </a>
+
                                                 <div class="media-body ">
                                                     <small class="pull-right">2h ago</small>
-                                                    <strong>Mark Johnson</strong> posted message on <strong>Monica Smith</strong> site. <br>
+                                                    <strong>Mark Johnson</strong> posted message on <strong>Monica
+                                                        Smith</strong> site. <br>
                                                     <small class="text-muted">Today 2:10 pm - 12.06.2014</small>
                                                 </div>
                                             </div>
@@ -548,9 +439,11 @@
                                                 <a href="assets/profile.html" class="pull-left">
                                                     <img alt="image" class="img-circle" src="assets/img/a3.jpg">
                                                 </a>
+
                                                 <div class="media-body ">
                                                     <small class="pull-right">2h ago</small>
-                                                    <strong>Janet Rosowski</strong> add 1 photo on <strong>Monica Smith</strong>. <br>
+                                                    <strong>Janet Rosowski</strong> add 1 photo on <strong>Monica
+                                                        Smith</strong>. <br>
                                                     <small class="text-muted">2 days ago at 8:30am</small>
                                                 </div>
                                             </div>
@@ -558,12 +451,15 @@
                                                 <a href="assets/profile.html" class="pull-left">
                                                     <img alt="image" class="img-circle" src="assets/img/a4.jpg">
                                                 </a>
+
                                                 <div class="media-body ">
                                                     <small class="pull-right text-navy">5h ago</small>
-                                                    <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica Smith</strong>. <br>
+                                                    <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica
+                                                        Smith</strong>. <br>
                                                     <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
                                                     <div class="actions">
-                                                        <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
+                                                        <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i>
+                                                            Like </a>
                                                         <a class="btn btn-xs btn-white"><i class="fa fa-heart"></i> Love</a>
                                                     </div>
                                                 </div>
@@ -572,16 +468,22 @@
                                                 <a href="assets/profile.html" class="pull-left">
                                                     <img alt="image" class="img-circle" src="assets/img/a5.jpg">
                                                 </a>
+
                                                 <div class="media-body ">
                                                     <small class="pull-right">2h ago</small>
-                                                    <strong>Kim Smith</strong> posted message on <strong>Monica Smith</strong> site. <br>
+                                                    <strong>Kim Smith</strong> posted message on <strong>Monica
+                                                        Smith</strong> site. <br>
                                                     <small class="text-muted">Yesterday 5:20 pm - 12.06.2014</small>
                                                     <div class="well">
-                                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-                                                        Over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                                                        Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                        industry. Lorem Ipsum has been the industry's standard dummy
+                                                        text ever since the 1500s.
+                                                        Over the years, sometimes by accident, sometimes on purpose
+                                                        (injected humour and the like).
                                                     </div>
                                                     <div class="pull-right">
-                                                        <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
+                                                        <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i>
+                                                            Like </a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -589,6 +491,7 @@
                                                 <a href="assets/profile.html" class="pull-left">
                                                     <img alt="image" class="img-circle" src="assets/img/profile.jpg">
                                                 </a>
+
                                                 <div class="media-body ">
                                                     <small class="pull-right">23h ago</small>
                                                     <strong>Monica Smith</strong> love <strong>Kim Smith</strong>. <br>
@@ -599,15 +502,19 @@
                                                 <a href="assets/profile.html" class="pull-left">
                                                     <img alt="image" class="img-circle" src="assets/img/a7.jpg">
                                                 </a>
+
                                                 <div class="media-body ">
                                                     <small class="pull-right">46h ago</small>
-                                                    <strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>. <br>
+                                                    <strong>Mike Loreipsum</strong> started following <strong>Monica
+                                                        Smith</strong>. <br>
                                                     <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <button class="btn btn-primary btn-block m-t"><i class="fa fa-arrow-down"></i> Show More</button>
+                                        <button class="btn btn-primary btn-block m-t"><i class="fa fa-arrow-down"></i>
+                                            Show More
+                                        </button>
 
                                     </div>
 
@@ -619,6 +526,7 @@
                             <div class="ibox float-e-margins">
                                 <div class="ibox-title">
                                     <h5>Alpha project</h5>
+
                                     <div class="ibox-tools">
                                         <a class="collapse-link">
                                             <i class="fa fa-chevron-up"></i>
@@ -639,7 +547,9 @@
                                 </div>
                                 <div class="ibox-content ibox-heading">
                                     <h3>You have meeting today!</h3>
-                                    <small><i class="fa fa-map-marker"></i> Meeting is on 6:00am. Check your schedule to see detail.</small>
+                                    <small><i class="fa fa-map-marker"></i> Meeting is on 6:00am. Check your schedule to
+                                        see detail.
+                                    </small>
                                 </div>
                                 <div class="ibox-content inspinia-timeline">
 
@@ -654,10 +564,13 @@
                                             <div class="col-xs-7 content no-top-border">
                                                 <p class="m-b-xs"><strong>Meeting</strong></p>
 
-                                                <p>Conference on the sales results for the previous year. Monica please examine sales trends in marketing and products. Below please find the current status of the
+                                                <p>Conference on the sales results for the previous year. Monica please
+                                                    examine sales trends in marketing and products. Below please find
+                                                    the current status of the
                                                     sale.</p>
 
-                                                <p><span data-diameter="40" class="updating-chart">5,3,9,6,5,9,7,3,5,2,5,3,9,6,5,9,4,7,3,2,9,8,7,4,5,1,2,9,5,4,7,2,7,7,3,5,2</span></p>
+                                                <p><span data-diameter="40" class="updating-chart">5,3,9,6,5,9,7,3,5,2,5,3,9,6,5,9,4,7,3,2,9,8,7,4,5,1,2,9,5,4,7,2,7,7,3,5,2</span>
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
@@ -671,7 +584,10 @@
                                             </div>
                                             <div class="col-xs-7 content">
                                                 <p class="m-b-xs"><strong>Send documents to Mike</strong></p>
-                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.</p>
+
+                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                    industry. Lorem Ipsum has been the industry's standard dummy text
+                                                    ever since.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -684,9 +600,11 @@
                                             </div>
                                             <div class="col-xs-7 content">
                                                 <p class="m-b-xs"><strong>Coffee Break</strong></p>
+
                                                 <p>
                                                     Go to shop and find some products.
-                                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.
+                                                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                    industry. Lorem Ipsum has been the industry's.
                                                 </p>
                                             </div>
                                         </div>
@@ -701,6 +619,7 @@
                                             </div>
                                             <div class="col-xs-7 content">
                                                 <p class="m-b-xs"><strong>Phone with Jeronimo</strong></p>
+
                                                 <p>
                                                     Lorem Ipsum has been the industry's standard dummy text ever since.
                                                 </p>
@@ -717,6 +636,7 @@
                                             </div>
                                             <div class="col-xs-7 content">
                                                 <p class="m-b-xs"><strong>Go to the doctor dr Smith</strong></p>
+
                                                 <p>
                                                     Find some issue and go to doctor.
                                                 </p>
@@ -733,8 +653,11 @@
                                             </div>
                                             <div class="col-xs-7 content">
                                                 <p class="m-b-xs"><strong>Chat with Monica and Sandra</strong></p>
+
                                                 <p>
-                                                    Web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                                                    Web sites still in their infancy. Various versions have evolved over
+                                                    the years, sometimes by accident, sometimes on purpose (injected
+                                                    humour and the like).
                                                 </p>
                                             </div>
                                         </div>
@@ -758,6 +681,7 @@
         </div>
 
     </div>
+
 </div>
 
 <!-- Mainly scripts -->
@@ -801,8 +725,8 @@
 
 
 <script>
-    $(document).ready(function() {
-        setTimeout(function() {
+    $(document).ready(function () {
+        setTimeout(function () {
             toastr.options = {
                 closeButton: true,
                 progressBar: true,
@@ -814,10 +738,10 @@
         }, 1300);
 
         var data1 = [
-            [0,4],[1,8],[2,5],[3,10],[4,4],[5,16],[6,5],[7,11],[8,6],[9,11],[10,30],[11,10],[12,13],[13,4],[14,3],[15,3],[16,6]
+            [0, 4], [1, 8], [2, 5], [3, 10], [4, 4], [5, 16], [6, 5], [7, 11], [8, 6], [9, 11], [10, 30], [11, 10], [12, 13], [13, 4], [14, 3], [15, 3], [16, 6]
         ];
         var data2 = [
-            [0,1],[1,0],[2,2],[3,0],[4,1],[5,3],[6,1],[7,5],[8,2],[9,3],[10,2],[11,1],[12,0],[13,2],[14,8],[15,0],[16,0]
+            [0, 1], [1, 0], [2, 2], [3, 0], [4, 1], [5, 3], [6, 1], [7, 5], [8, 2], [9, 3], [10, 2], [11, 1], [12, 0], [13, 2], [14, 8], [15, 0], [16, 0]
         ];
         $("#flot-dashboard-chart").length && $.plot($("#flot-dashboard-chart"), [
                 data1, data2
@@ -848,8 +772,7 @@
                     color: '#d5d5d5'
                 },
                 colors: ["#1ab394", "#464f88"],
-                xaxis:{
-                },
+                xaxis: {},
                 yaxis: {
                     ticks: 4
                 },
