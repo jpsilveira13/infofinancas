@@ -31,7 +31,7 @@
             <!--Continually expanded and constantly improved Inspinia Admin Them (IN+)-->
         </p>
         <p>Começe agora.</p>
-        <form class="m-t" role="form" action="index.html">
+        <form class="m-t" role="form" action="HomeController/index">
             <div class="form-group">
                 <input type="email" class="form-control" placeholder="Nome" required="">
             </div>
@@ -49,8 +49,8 @@
 </div>
 
 <!-- Mainly scripts -->
-<script src="js/jquery-2.1.1.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="<?php echo base_url()?>/assets/js/jquery-2.1.1.js"></script>
+<script src="<?php echo base_url()?>/assets/js/bootstrap.min.js"></script>
 
 </body>
 
