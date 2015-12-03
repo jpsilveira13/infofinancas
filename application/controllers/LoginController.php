@@ -4,7 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /**
  * Class HomeController
  */
-class LoginController extends CI_Controller {
+class LoginController extends CI_Controller
+{
 
     public function index()
     {
@@ -14,5 +15,10 @@ class LoginController extends CI_Controller {
     public function verificarLogin()
     {
 
+    }
+
+    public function registrar()
+    {
+        $this->load->view('register');
     }
 }

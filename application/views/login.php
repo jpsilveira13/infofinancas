@@ -42,7 +42,7 @@
 
             <a href="#"><small>Esqueci minha senha.</small></a>
             <p class="text-muted text-center"><small>Não tem conta?</small></p>
-            <a class="btn btn-sm btn-white btn-block" href="register.html">Cadastre-se</a>
+            <a class="btn btn-sm btn-white btn-block" href="LoginController/registrar">Cadastre-se</a>
         </form>
         <p class="m-t"> <small>Dynado Finanças &copy; 2015</small> </p>
     </div>
