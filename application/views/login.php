@@ -31,12 +31,12 @@
             <!--Continually expanded and constantly improved Inspinia Admin Them (IN+)-->
         </p>
         <p>Começe agora.</p>
-        <form class="m-t" role="form" action="index.html">
+        <form class="m-t" role="form" action="<?php echo base_url()?>LoginController->verificaLogin">
             <div class="form-group">
-                <input type="email" class="form-control" placeholder="Nome" required="">
+                <input name="email" type="email" class="form-control" placeholder="Email" required="">
             </div>
             <div class="form-group">
-                <input type="password" class="form-control" placeholder="Senha" required="">
+                <input name="senha" type="password" class="form-control" placeholder="Senha" required="">
             </div>
             <button type="submit" class="btn btn-primary block full-width m-b">Entrar</button>
 
@@ -49,8 +49,8 @@
 </div>
 
 <!-- Mainly scripts -->
-<script src="js/jquery-2.1.1.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="<?php echo base_url()?>/assets/js/jquery-2.1.1.js"></script>
+<script src="<?php echo base_url()?>/assets/js/bootstrap.min.js"></script>
 
 </body>
 
