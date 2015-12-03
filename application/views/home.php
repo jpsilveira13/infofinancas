@@ -8,17 +8,17 @@
 
     <title>Dynado Finanças</title>
 
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 
     <!-- Toastr style -->
-    <link href="assets/css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>/assets/css/plugins/toastr/toastr.min.css" rel="stylesheet">
 
     <!-- Gritter -->
-    <link href="assets/js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>/assets/js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
 
-    <link href="assets/css/animate.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>/assets/css/animate.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>/assets/css/style.css" rel="stylesheet">
 
 </head>
 
@@ -35,7 +35,7 @@
                     <div class="dropdown profile-element">
 
                         <!-- Foto Perfil -->
-                        <span><img alt="image" class="img-circle" src="assets/img/profile_small.jpg"/></span>
+                        <span><img alt="image" class="img-circle" src="<?php echo base_url()?>/assets/img/profile_small.jpg"/></span>
 
                         <!-- Dados Perfil -->
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
@@ -92,7 +92,7 @@
                             <li>
                                 <div class="dropdown-messages-box">
                                     <a href="assets/profile.html" class="pull-left">
-                                        <img alt="image" class="img-circle" src="assets/img/a7.jpg">
+                                        <img alt="image" class="img-circle" src="<?php echo base_url()?>/assets/img/a7.jpg">
                                     </a>
 
                                     <div class="media-body">
@@ -107,7 +107,7 @@
                             <li>
                                 <div class="dropdown-messages-box">
                                     <a href="assets/profile.html" class="pull-left">
-                                        <img alt="image" class="img-circle" src="assets/img/a4.jpg">
+                                        <img alt="image" class="img-circle" src="<?php echo base_url()?>/assets/img/a4.jpg">
                                     </a>
 
                                     <div class="media-body ">
@@ -122,7 +122,7 @@
                             <li>
                                 <div class="dropdown-messages-box">
                                     <a href="assets/profile.html" class="pull-left">
-                                        <img alt="image" class="img-circle" src="assets/img/profile.jpg">
+                                        <img alt="image" class="img-circle" src="<?php echo base_url()?>/assets/img/profile.jpg">
                                     </a>
 
                                     <div class="media-body ">
@@ -284,43 +284,43 @@
 </div>
 
 <!-- Mainly scripts -->
-<script src="assets/js/jquery-2.1.1.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-<script src="assets/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="<?php echo base_url()?>/assets/js/jquery-2.1.1.js"></script>
+<script src="<?php echo base_url()?>/assets/js/bootstrap.min.js"></script>
+<script src="<?php echo base_url()?>/assets/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="<?php echo base_url()?>/assets/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
 <!-- Flot -->
-<script src="assets/js/plugins/flot/jquery.flot.js"></script>
-<script src="assets/js/plugins/flot/jquery.flot.tooltip.min.js"></script>
-<script src="assets/js/plugins/flot/jquery.flot.spline.js"></script>
-<script src="assets/js/plugins/flot/jquery.flot.resize.js"></script>
-<script src="assets/js/plugins/flot/jquery.flot.pie.js"></script>
+<script src="<?php echo base_url()?>/assets/js/plugins/flot/jquery.flot.js"></script>
+<script src="<?php echo base_url()?>/assets/js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+<script src="<?php echo base_url()?>/assets/js/plugins/flot/jquery.flot.spline.js"></script>
+<script src="<?php echo base_url()?>/assets/js/plugins/flot/jquery.flot.resize.js"></script>
+<script src="<?php echo base_url()?>/assets/js/plugins/flot/jquery.flot.pie.js"></script>
 
 <!-- Peity -->
-<script src="assets/js/plugins/peity/jquery.peity.min.js"></script>
-<script src="assets/js/demo/peity-demo.js"></script>
+<script src="<?php echo base_url()?>/assets/js/plugins/peity/jquery.peity.min.js"></script>
+<script src="<?php echo base_url()?>/assets/js/demo/peity-demo.js"></script>
 
 <!-- Custom and plugin javascript -->
-<script src="assets/js/inspinia.js"></script>
-<script src="assets/js/plugins/pace/pace.min.js"></script>
+<script src="<?php echo base_url()?>/assets/js/inspinia.js"></script>
+<script src="<?php echo base_url()?>/assets/js/plugins/pace/pace.min.js"></script>
 
 <!-- jQuery UI -->
-<script src="assets/js/plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="<?php echo base_url()?>/assets/js/plugins/jquery-ui/jquery-ui.min.js"></script>
 
 <!-- GITTER -->
-<script src="assets/js/plugins/gritter/jquery.gritter.min.js"></script>
+<script src="<?php echo base_url()?>/assets/js/plugins/gritter/jquery.gritter.min.js"></script>
 
 <!-- Sparkline -->
-<script src="assets/js/plugins/sparkline/jquery.sparkline.min.js"></script>
+<script src="<?php echo base_url()?>/assets/js/plugins/sparkline/jquery.sparkline.min.js"></script>
 
 <!-- Sparkline demo data  -->
-<script src="assets/js/demo/sparkline-demo.js"></script>
+<script src="<?php echo base_url()?>/assets/js/demo/sparkline-demo.js"></script>
 
 <!-- ChartJS-->
-<script src="assets/js/plugins/chartJs/Chart.min.js"></script>
+<script src="<?php echo base_url()?>/assets/js/plugins/chartJs/Chart.min.js"></script>
 
 <!-- Toastr -->
-<script src="assets/js/plugins/toastr/toastr.min.js"></script>
+<script src="<?php echo base_url()?>/assets/js/plugins/toastr/toastr.min.js"></script>
 
 
 <script>

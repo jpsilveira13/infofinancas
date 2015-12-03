@@ -8,11 +8,11 @@
 
     <title>Dynado | Register</title>
 
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link href="assets/css/plugins/iCheck/custom.css" rel="stylesheet">
-    <link href="assets/css/animate.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>/assets/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>/assets/css/animate.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>/assets/css/style.css" rel="stylesheet">
 
 </head>
 
@@ -50,15 +50,15 @@
 </div>
 
 <!-- Mainly scripts -->
-<script src="assets/js/jquery-2.1.1.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
+<script src="<?php echo base_url()?>assets/js/jquery-2.1.1.js"></script>
+<script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
 <!-- iCheck -->
-<script src="assets/js/plugins/iCheck/icheck.min.js"></script>
+<script src="<?php echo base_url();?>assets/js/plugins/iCheck/icheck.min.js"></script>
 <script>
     $(document).ready(function(){
         $('.i-checks').iCheck({
             checkboxClass: 'icheckbox_square-green',
-            radioClass: 'iradio_square-green',
+            radioClass: 'iradio_square-green'
         });
     });
 </script>
