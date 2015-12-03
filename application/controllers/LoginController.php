@@ -11,7 +11,7 @@ class LoginController extends CI_Controller
         $this->load->view('login');
     }
 
-    public function verificarLogin()
+    public function verificaLogin()
     {
 
     }
