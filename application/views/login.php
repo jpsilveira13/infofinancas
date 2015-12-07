@@ -22,7 +22,7 @@
     <div>
         <div>
 
-            <h1 class="logo-name">DF</h1>
+            <img src="<?php echo base_url()?>assets/img/Logo - 2short.png" style="margin-left: -105px;">
 
         </div>
         <h3>Bem vindo ao Dyando Finanças</h3>

@@ -18,42 +18,40 @@
 
 <body class="gray-bg">
 
-<div class="middle-box text-center loginscreen   animated fadeInDown">
+<div class="middle-box text-center loginscreen  animated fadeInDown">
     <div>
         <div>
 
-            <h1 class="logo-name">IN+</h1>
+            <a href="<?php echo base_url()?>LoginController"> <img src="<?php echo base_url()?>assets/img/Logo - 2short.png" style="margin-left: -105px;"> </a>
 
         </div>
-        <h3>Register to IN+</h3>
-        <p>Create account to see it in action.</p>
-        <form class="m-t" role="form" action="login.html">
+        <h3>Cadastre-se no Dynado.</h3>
+        <p>Crie uma conta para usar o Dynado.s</p>
+        <form class="m-t" role="form" action="<?php echo base_url()?>login.html">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Name" required="">
+                <input type="text" class="form-control" placeholder="Nome" required="">
             </div>
             <div class="form-group">
                 <input type="email" class="form-control" placeholder="Email" required="">
             </div>
             <div class="form-group">
-                <input type="password" class="form-control" placeholder="Password" required="">
+                <input type="password" class="form-control" placeholder="Senha" required="">
             </div>
             <div class="form-group">
-                <div class="checkbox i-checks"><label> <input type="checkbox"><i></i> Agree the terms and policy </label></div>
+                <div class="checkbox i-checks"><label> <input type="checkbox"><i></i> Eu concordo com os termos de uso. </label></div>
             </div>
-            <button type="submit" class="btn btn-primary block full-width m-b">Register</button>
+            <button type="submit" class="btn btn-primary block full-width m-b">Cadastrar</button>
 
-            <p class="text-muted text-center"><small>Already have an account?</small></p>
-            <a class="btn btn-sm btn-white btn-block" href="login.html">Login</a>
         </form>
-        <p class="m-t"> <small>Inspinia we app framework base on Bootstrap 3 &copy; 2014</small> </p>
+        <p class="m-t"> <small>Dynado Finanças &copy; 2015</small> </p>
     </div>
 </div>
 
 <!-- Mainly scripts -->
-<script src="assets/js/jquery-2.1.1.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
+<script src="<?php echo base_url()?>assets/js/jquery-2.1.1.js"></script>
+<script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
 <!-- iCheck -->
-<script src="assets/js/plugins/iCheck/icheck.min.js"></script>
+<script src="<?php echo base_url()?>assets/js/plugins/iCheck/icheck.min.js"></script>
 <script>
     $(document).ready(function(){
         $('.i-checks').iCheck({
