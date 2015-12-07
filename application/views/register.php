@@ -22,11 +22,11 @@
     <div>
         <div>
 
-            <a href="<?php echo base_url()?>LoginController"> <img src="<?php echo base_url()?>assets/img/Logo - 2short.png" style="margin-left: -105px;"> </a>
+            <a href="<?php echo base_url()?>"> <img src="<?php echo base_url()?>assets/img/Logo - 2short.png" style="margin-left: -105px;"> </a>
 
         </div>
         <h3>Cadastre-se no Dynado.</h3>
-        <p>Crie uma conta para usar o Dynado.s</p>
+        <p>Crie uma conta para usar o Dynado.</p>
         <form class="m-t" role="form" action="<?php echo base_url()?>login.html">
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="Nome" required="">
