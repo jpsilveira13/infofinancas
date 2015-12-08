@@ -80,6 +80,8 @@
                 </div>
                 <ul class="nav navbar-top-links navbar-right">
 
+
+
                     <!-- Sair -->
                     <li>
                         <a href="<?php echo base_url() ?>">
@@ -227,6 +229,7 @@
 
 <!-- Toastr -->
 <script src="<?php echo base_url() ?>/assets/js/plugins/toastr/toastr.min.js"></script>
+
 
 
 <script>

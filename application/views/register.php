@@ -27,15 +27,15 @@
         </div>
         <h3>Cadastre-se no Dynado.</h3>
         <p>Crie uma conta para usar o Dynado.</p>
-        <form class="m-t" role="form" action="<?php echo base_url()?>login.html">
+        <form class="m-t" role="form" action="<?php echo base_url()?>HomeController/criarConta" method="post">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Nome" required="">
+                <input name="nome" type="text" class="form-control" placeholder="Nome" required="">
             </div>
             <div class="form-group">
-                <input type="email" class="form-control" placeholder="Email" required="">
+                <input name="email" type="email" class="form-control" placeholder="Email" required="">
             </div>
             <div class="form-group">
-                <input type="password" class="form-control" placeholder="Senha" required="">
+                <input name="senha" type="password" class="form-control" placeholder="Senha" required="">
             </div>
             <div class="form-group">
                 <div class="checkbox i-checks"><label> <input type="checkbox"><i></i> Eu concordo com os termos de uso. </label></div>
