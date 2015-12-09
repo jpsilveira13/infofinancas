@@ -1,7 +1,20 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
 /**
- * Created by PhpStorm.
- * User: Iago
- * Date: 09/12/2015
- * Time: 11:18
+ * Class ProfileController
  */
+class ProfileController extends CI_Controller
+{
+
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    public function index()//para login normal
+    {
+        $this->load->view('profile');//chama a tela do perfil
+
+    }
+}

@@ -47,9 +47,9 @@
 
                         <!-- Menu Perfil -->
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                            <li><a href="<?php echo base_url() ?>HomeController/index?">Perfil</a></li>
+                            <li><a href="<?php echo base_url() ?>ProfileController">Perfil</a></li>
                             <li class="divider"></li>
-                            <li><a href="<?php echo base_url() ?>">Logout</a></li>
+                            <li><a href="<?php echo base_url(); $this->session->sess_destroy(); ?>">Sair</a></li>
                         </ul>
 
                     </div>
@@ -97,7 +97,7 @@
                     <!-- Sair -->
                     <li>
                         <a href="<?php echo base_url() ?>">
-                            <i class="fa fa-sign-out"></i> Log out
+                            <i class="fa fa-sign-out"></i> Sair
                         </a>
                     </li>
 

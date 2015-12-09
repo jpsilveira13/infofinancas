@@ -17,27 +17,33 @@ class HomeController extends CI_Controller
 
     }
 
-    public function index()//para login normal
+    public function index()
+    {
+        $this->load->view('home');
+    }
+
+    public function login()//para login normal
     {
         $data['email'] = $_POST['email'];// pega via post o email que venho do formulario
         $data['senha'] = $_POST['senha']; // pega via post a senha que venho do formulario
         $usuario = $this->LoginModel->buscaPorEmailSenha($data['email'],$data['senha']); // acessa a função buscaPorEmailSenha do modelo
 
         if($usuario){
+            $this->session->set_userdata("usuario_logado", $usuario);//cria a session
             $this->load->view('home');//chama a tela inicial
         }else{
-            echo "não deu certo!";
+            $this->load->view('login');
         }
     }
 
     public function criarConta()//para criar uma nova conta
     {
-        $data['nome'] = $_POST['nome'];
-        $data['email'] = $_POST['email'];
-        $data['senha'] = $_POST['senha'];
+        $data['nome'] = $_POST['nome'];//recebe o nome digitado
+        $data['email'] = $_POST['email'];//recebe o email digitado
+        $data['senha'] = $_POST['senha'];//recebe a senha digitada
 
-        $this->CadastrarModel->inserir($data);
+        $this->CadastrarModel->inserir($data);//chama a função inserir e passa os dados como parametros
 
-        $this->load->view('home');
+        $this->load->view('home');//carrega a view home
     }
 }
