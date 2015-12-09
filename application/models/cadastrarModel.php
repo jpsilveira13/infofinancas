@@ -1,6 +1,6 @@
 <?php
 
-class Cadastrar extends CI_Model
+class CadastrarModel extends CI_Model
 {
 
     public $nome;

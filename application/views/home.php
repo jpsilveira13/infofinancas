@@ -507,7 +507,7 @@
         }, 1300);
 
         var lineData = {
-            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
             datasets: [
                 {
                     label: "Example dataset",
@@ -517,7 +517,7 @@
                     pointStrokeColor: "#fff",
                     pointHighlightFill: "#fff",
                     pointHighlightStroke: "rgba(220,220,220,1)",
-                    data: [65, 59, 80, 81, 56, 55, 40]
+                    data: [65, 59, 80, 81, 56, 55, 40,65, 59, 80, 81, 56]
                 },
                 {
                     label: "Example dataset",
@@ -527,7 +527,7 @@
                     pointStrokeColor: "#fff",
                     pointHighlightFill: "#fff",
                     pointHighlightStroke: "rgba(26,179,148,1)",
-                    data: [28, 48, 40, 19, 86, 27, 90]
+                    data: [28, 48, 40, 19, 86, 27, 90, 28, 48, 40, 19, 86]
                 }
             ]
         };
