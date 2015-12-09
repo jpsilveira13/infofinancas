@@ -10,6 +10,10 @@ class HomeController extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+
+        $this->load->database();
+        $this->load->model('Cadastrar');
+
     }
 
     public function index()//para login normal
@@ -19,12 +23,11 @@ class HomeController extends CI_Controller
 
     public function criarConta()//para criar uma nova conta
     {
-        $this->load->model('Cadastrar', '',true);
+        $data['nome'] = $_POST['nome'];
+        $data['email'] = $_POST['email'];
+        $data['senha'] = $_POST['senha'];
 
-        $this->Cadastrar->nome = $this->input->post('nome');
-        $this->Cadastrar->email = $this->input->post('email');
-        $this->Cadastrar->senha = $this->input->post('senha');
-
+        $this->Cadastrar->inserir($data);
 
         $this->load->view('home');
     }

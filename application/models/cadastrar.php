@@ -12,9 +12,9 @@ class Cadastrar extends CI_Model
         parent::__construct();
     }
 
-    public function inserir()
+    public function inserir($data)
     {
-        return $this->db->insert('usuario', $this);
+        return $this->db->insert('usuario', $data);
     }
 
 }
