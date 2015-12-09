@@ -121,32 +121,72 @@
         </div>
 
         <div class="wrapper wrapper-content">
-            <div class="row animated fadeInRight">
-                <div class="col-md-4">
-                    <div class="ibox float-e-margins">
+            <div class="row animated fadeInDown">
+                <div class="col-md-3">
+                    <div class="ibox float-e-margin">
                         <div class="ibox-title">
                             <h5>Informções do Perfil</h5>
                         </div>
                         <div>
                             <div class="ibox-content no-padding border-left-right">
-                                <img alt="image" class="img-responsive img-preview"
-                                     src="<?php echo base_url() ?>/assets/img/icon-user-default.png">
+
+                                <button type="button" class="no-borders no-margins no-padding" data-toggle="modal"
+                                        data-target="#inserirModal">    <!-- imagem de perfil -->
+                                    <img alt="image" class="img-responsive img-preview"
+                                         src="<?php echo base_url() ?>/assets/img/icon-user-default.png">
+                                </button> <!-- imagem de perfil -->
+
+                                <div id="inserirModal" class="note-image-dialog modal in" aria-hidden="false">
+                                    <!-- modal para inserir imagens -->
+
+                                    <div class="modal-dialog">
+                                        <div class="modal-content animated bounceInRight">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal"><span
+                                                        aria-hidden="true">&times;</span><span
+                                                        class="sr-only">Close</span></button>
+                                                <h4>Insira Imagem</h4>
+                                            </div>
+
+                                            <div class="modal-body">
+                                                <div class="row-fluid">
+                                                    <h5>Selecionar arquivo</h5>
+                                                    <input class="note-image-input" type="file" name="files"
+                                                           accept="image/*">
+                                                    <h5>Image URL</h5>
+                                                    <input class="note-image-url form-control span12" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button href="#" class="btn btn-primary note-image-btn disabled"
+                                                        disabled="disabled">
+                                                    Insert Image
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- modal para inserir imagens -->
+
                             </div>
-                            <div class="ibox-content profile-content">
+
+                            <div class="ibox-content profile-content">     <!-- parte das informações -->
                                 <h4><strong>Monica Smith</strong></h4>
 
                                 <div class="ibox float-e-margins">    <!--caixa da descrição editável -->
                                     <div class="ibox-title">
                                         <h5>Descrição</h5>
-                                        <button id="edit" class="btn btn-primary btn-xs m-l-sm" onclick="edit()" type="button">Editar
+                                        <button id="edit" class="btn btn-primary btn-xs m-l-sm" onclick="edit()"
+                                                type="button">
+                                            Editar
                                         </button>
-                                        <button id="c" class="btn btn-primary  btn-xs" onclick="save()" type="button">Salvar
+                                        <button id="c" class="btn btn-primary  btn-xs" onclick="save()" type="button">
+                                            Salvar
                                         </button>
 
                                     </div>
-                                    <div class="ibox-content no-padding">
+                                    <div class="ibox-content no-paddings">
 
-                                        <div class="click2edit wrapper p-md table-bordered">
+                                        <div class="click2edit wrapper p-md table-bordered border-bottom">
 
                                         </div>
 
@@ -154,11 +194,26 @@
 
                                 </div> <!--caixa da descrição editável -->
 
-                            </div>
+                            </div>  <!-- parte das informações -->
                         </div>
                     </div>
                 </div>
-                <div class="col-md-8">
+
+                <div class="col-md-9">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>Dados</h5>
+                        </div>
+
+                        <div class="ibox-content">
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- <div class="col-md-8">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
                             <h5>Activites</h5>
@@ -343,7 +398,7 @@
                         </div>
                     </div>
 
-                </div>
+                </div>-->
             </div>
         </div>
         <div class="footer">
