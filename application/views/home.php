@@ -67,7 +67,7 @@
     </nav>
 
     <!-- Dashboard -->
-    <div id="page-wrapper" class="gray-bg">
+    <div id="page-wrapper" class="gray-bg" Style="min-height: 100px">
 
         <!-- Menu Topo -->
         <div class="row border-bottom white-bg">
@@ -79,7 +79,6 @@
 
                 </div>
                 <ul class="nav navbar-top-links navbar-right">
-
 
 
                     <!-- Sair -->
@@ -106,8 +105,44 @@
                             <h5>Despesas</h5>
                         </div>
 
-                        <div class="ibox-content">
-                            <!-- despesas aqui-->
+                        <div class="ibox-content no-padding">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <p>
+                                        <strong>Cartão de Crédito</strong>
+                                        <span class="label label-danger pull-right"> R$ 250,00</span>
+                                    </p>
+                                    <small class="block text-muted"><i class="fa fa-clock-o"></i> 08/12/2015</small>
+                                </li>
+                                <li class="list-group-item">
+                                    <p>
+                                        <strong>Cartão de Crédito</strong>
+                                        <span class="label label-danger pull-right"> R$ 250,00</span>
+                                    </p>
+                                    <small class="block text-muted"><i class="fa fa-clock-o"></i> 09/12/2015</small>
+                                </li>
+                                <li class="list-group-item">
+                                    <p>
+                                        <strong>Cartão de Crédito</strong>
+                                        <span class="label label-danger pull-right"> R$ 250,00</span>
+                                    </p>
+                                    <small class="block text-muted"><i class="fa fa-clock-o"></i> 10/12/2015</small>
+                                </li>
+                                <li class="list-group-item">
+                                    <p>
+                                        <strong>Cartão de Crédito</strong>
+                                        <span class="label label-warning-light pull-right"> R$ 250,00</span>
+                                    </p>
+                                    <small class="block text-muted"><i class="fa fa-clock-o"></i> 13/12/2015</small>
+                                </li>
+                                <li class="list-group-item">
+                                    <p>
+                                        <strong>Cartão de Crédito</strong>
+                                        <span class="label label-warning-light pull-right"> R$ 250,00</span>
+                                    </p>
+                                    <small class="block text-muted"><i class="fa fa-clock-o"></i> 15/12/2015</small>
+                                </li>
+                            </ul>
                         </div>
 
                     </div>
@@ -122,7 +157,6 @@
                         </div>
 
                         <div class="ibox-content">
-                            <!-- fluxo de caixa aqui-->
 
                             <div class="ibox float-e-margins">
                                 <div>
@@ -130,8 +164,7 @@
                                         <canvas id="lineChart" height="140"></canvas>
                                     </div>
                                 </div>
-                            </div>
-
+                            </div><br/><br/>
                         </div>
 
                     </div>
@@ -145,8 +178,44 @@
                             <h5>Entradas</h5>
                         </div>
 
-                        <div class="ibox-content">
-                            <!-- entradas aqui-->
+                        <div class="ibox-content no-padding">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <p>
+                                        <strong>Salário</strong>
+                                        <span class="label label-info pull-right"> R$ 250,00</span>
+                                    </p>
+                                    <small class="block text-muted"><i class="fa fa-clock-o"></i> 01/01/2016</small>
+                                </li>
+                                <li class="list-group-item">
+                                    <p>
+                                        <strong>Salário</strong>
+                                        <span class="label label-info pull-right"> R$ 250,00</span>
+                                    </p>
+                                    <small class="block text-muted"><i class="fa fa-clock-o"></i> 01/02/2016</small>
+                                </li>
+                                <li class="list-group-item">
+                                    <p>
+                                        <strong>Salário</strong>
+                                        <span class="label label-info pull-right"> R$ 250,00</span>
+                                    </p>
+                                    <small class="block text-muted"><i class="fa fa-clock-o"></i> 01/03/2016</small>
+                                </li>
+                                <li class="list-group-item">
+                                    <p>
+                                        <strong>Salário</strong>
+                                        <span class="label label-info pull-right"> R$ 250,00</span>
+                                    </p>
+                                    <small class="block text-muted"><i class="fa fa-clock-o"></i> 01/04/2016</small>
+                                </li>
+                                <li class="list-group-item">
+                                    <p>
+                                        <strong>Salário</strong>
+                                        <span class="label label-info pull-right"> R$ 250,00</span>
+                                    </p>
+                                    <small class="block text-muted"><i class="fa fa-clock-o"></i> 01/05/2016</small>
+                                </li>
+                            </ul>
                         </div>
 
                     </div>
@@ -166,106 +235,69 @@
                         <div class="ibox-content">
 
                             <table class="table">
+
                                 <thead>
                                 <tr>
-                                    <th>#</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Username</th>
+                                    <th>Movimentação</th>
+                                    <th>Nome</th>
+                                    <th>Descrição</th>
+                                    <th>Valor</th>
+                                    <th>Vencimento</th>
                                 </tr>
                                 </thead>
+
                                 <tbody>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
+                                    <td><span class="label label-info">ENTRADA</span></td>
+                                    <td>Salário</td>
+                                    <td>salário que se recebe todo mês.</td>
+                                    <td>R$ 2000,00</td>
+                                    <td>10/12/2015</td>
                                 </tr>
                                 <tr>
-                                    <td>2</td>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
+                                    <td><span class="label label-danger">DESPESA</span></td>
+                                    <td>Cartão de Crédito 1</td>
+                                    <td>conta do cartão de crédito que vence todo mês.</td>
+                                    <td>R$ 2000,00</td>
+                                    <td>10/12/2015</td>
                                 </tr>
                                 <tr>
-                                    <td>3</td>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
+                                    <td><span class="label label-danger">DESPESA</span></td>
+                                    <td>Cartão de Crédito 1</td>
+                                    <td>conta do cartão de crédito que vence todo mês.</td>
+                                    <td>R$ 2000,00</td>
+                                    <td>10/12/2015</td>
                                 </tr>
                                 <tr>
-                                    <td>3</td>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
+                                    <td><span class="label label-danger">DESPESA</span></td>
+                                    <td>Cartão de Crédito 1</td>
+                                    <td>conta do cartão de crédito que vence todo mês.</td>
+                                    <td>R$ 2000,00</td>
+                                    <td>10/12/2015</td>
                                 </tr>
                                 <tr>
-                                    <td>3</td>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
+                                    <td><span class="label label-danger">DESPESA</span></td>
+                                    <td>Cartão de Crédito 1</td>
+                                    <td>conta do cartão de crédito que vence todo mês.</td>
+                                    <td>R$ 2000,00</td>
+                                    <td>10/12/2015</td>
                                 </tr>
                                 <tr>
-                                    <td>3</td>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
+                                    <td><span class="label label-danger">DESPESA</span></td>
+                                    <td>Cartão de Crédito 1</td>
+                                    <td>conta do cartão de crédito que vence todo mês.</td>
+                                    <td>R$ 2000,00</td>
+                                    <td>10/12/2015</td>
                                 </tr>
                                 <tr>
-                                    <td>3</td>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
+                                    <td><span class="label label-danger">DESPESA</span></td>
+                                    <td>Cartão de Crédito 1</td>
+                                    <td>conta do cartão de crédito que vence todo mês.</td>
+                                    <td>R$ 2000,00</td>
+                                    <td>10/12/2015</td>
                                 </tr>
                                 </tbody>
+
                             </table>
 
                         </div>
@@ -346,7 +378,7 @@
             datasets: [
                 {
                     label: "Example dataset",
-                    fillColor: "rgba(220,220,220,0.5)",
+                    fillColor: "rgba(225,0,0,0.1)",//"rgba(220,220,220,0.5)",
                     strokeColor: "rgba(220,220,220,1)",
                     pointColor: "rgba(220,220,220,1)",
                     pointStrokeColor: "#fff",
