@@ -47,7 +47,7 @@
                             <li><a href="<?php echo base_url() ?>ProfileController">Perfil</a></li>
                             <li class="divider"></li>
                             <li><a href="<?php echo base_url();
-                                $this->session->sess_destroy(); ?>">Logout</a></li>
+                                $this->session->sess_destroy(); ?>">Sair</a></li>
                         </ul>
 
                     </div>
@@ -94,7 +94,7 @@
                     <!-- Sair -->
                     <li>
                         <a href="<?php echo base_url() ?>">
-                            <i class="fa fa-sign-out"></i> Log out
+                            <i class="fa fa-sign-out"></i> Sair
                         </a>
                     </li>
 
@@ -122,10 +122,10 @@
 
         <div class="wrapper wrapper-content">
             <div class="row animated fadeInDown">
-                <div class="col-md-3">
+                <div class="col-md-6">
                     <div class="ibox float-e-margin">
                         <div class="ibox-title">
-                            <h5>Informções do Perfil</h5>
+                            <h5>Informações do Perfil</h5>
                         </div>
                         <div>
                             <div class="ibox-content no-padding border-left-right">
@@ -133,8 +133,9 @@
                                 <button type="button" class="no-borders no-margins no-padding" data-toggle="modal"
                                         data-target="#inserirModal">    <!-- imagem de perfil -->
                                     <img alt="image" class="img-responsive img-preview"
-                                         src="<?php echo base_url() ?>/assets/img/icon-user-default.png">
-                                </button> <!-- imagem de perfil -->
+                                                 src="<?php echo base_url() ?>/assets/img/icon-user-default.jpg">
+                                </button>
+                                <!-- imagem de perfil -->
 
                                 <div id="inserirModal" class="note-image-dialog modal in" aria-hidden="false">
                                     <!-- modal para inserir imagens -->
@@ -165,7 +166,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div> <!-- modal para inserir imagens -->
+                                </div>
+                                <!-- modal para inserir imagens -->
 
                             </div>
 
@@ -192,20 +194,49 @@
 
                                     </div>
 
-                                </div> <!--caixa da descrição editável -->
+                                </div>
+                                <!--caixa da descrição editável -->
 
-                            </div>  <!-- parte das informações -->
+                            </div>
+                            <!-- parte das informações -->
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-9">
+                <div class="col-md-6">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
                             <h5>Dados</h5>
+                            <button id="edit" class="btn btn-primary btn-xs m-l-sm " onclick="habilitaCampo()"
+                                    type="button">
+                                Editar
+                            </button>
                         </div>
 
+
+
                         <div class="ibox-content">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Nome</label>
+                                <div class="col-lg-10">
+                                    <input name="nome" type="text" disabled placeholder="Disabled input here..." class="form-control">
+                                </div>
+                            </div>
+                            <br><br>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Email</label>
+                                <div class="col-lg-10">
+                                    <input name="email" type="text" disabled placeholder="Disabled input here..." class="form-control">
+                                </div>
+                            </div>
+                            <br><br>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Senha</label>
+                                <div class="col-lg-10">
+                                    <input name="senha" type="text" disabled placeholder="Disabled input here..." class="form-control">
+                                </div>
+                            </div>
+                            <br><br>
 
                         </div>
                     </div>
@@ -445,6 +476,11 @@
     var save = function () {
         var aHTML = $('.click2edit').code(); //save HTML If you need(aHTML: array).
         $('.click2edit').destroy();
+    };
+    var habilitaCampo = function (){
+        $(document.getElementsByName('nome')).disable(false);
+        $(document.getElementsByName('email')).disable(false);
+        $(document.getElementsByName('senha')).disable(false);
     };
 </script>
 
