@@ -11,8 +11,8 @@ class HomeController extends CI_Controller
     {
         parent::__construct();
 
-        $this->load->database();
-        $this->load->model('Cadastrar');
+        //$this->load->database();
+        //$this->load->model('Cadastrar');
 
     }
 
