@@ -50,7 +50,7 @@
             <p class="text-muted text-center">
                 <small>Não tem conta?</small>
             </p>
-            <a class="btn btn-sm btn-white btn-block" href="<?php echo base_url() ?>LoginController/registrar">Cadastre-se</a>
+            <a class="btn btn-sm btn-white btn-block" href="<?php echo base_url() ?>HomeController/registrar">Cadastre-se</a>
         </form>
         <p class="m-t">
             <small>Dynado Finanças &copy; 2015</small>
@@ -61,6 +61,7 @@
 <!-- Mainly scripts -->
 <script src="<?php echo base_url() ?>/assets/js/jquery-2.1.1.js"></script>
 <script src="<?php echo base_url() ?>/assets/js/bootstrap.min.js"></script>
+
 
 </body>
 

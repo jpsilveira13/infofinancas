@@ -19,7 +19,11 @@ class HomeController extends CI_Controller
 
     public function index()//padrão para chamar a home
     {
-        $this->load->view('home');
+        if($this->session->userdata('id')){
+            $this->load->view('home');
+        } else {
+            $this->load->view('login');
+        }
     }
 
     public function login()//para login normal
@@ -29,11 +33,18 @@ class HomeController extends CI_Controller
         $usuario = $this->LoginModel->buscaPorEmailSenha($data['email'],$data['senha']); // acessa a função buscaPorEmailSenha do modelo
 
         if($usuario){
-            $this->session->set_userdata("usuario_logado", $usuario);//cria a session
+            $this->session->set_userdata($usuario);//cria a session
             $this->load->view('home');//chama a tela inicial
+            //var_dump($this->session->userdata('id'));
         }else{
             $this->load->view('login');
         }
+    }
+
+    public function logout()
+    {
+        $this->session->sess_destroy();
+        $this->load->view('login');
     }
 
     public function criarConta()//para criar uma nova conta
@@ -50,5 +61,10 @@ class HomeController extends CI_Controller
     public function buscarDados(){
         $dados = [10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65];
         return $dados;
+    }
+
+    public function registrar()
+    {
+        $this->load->view('register');
     }
 }

@@ -13,6 +13,7 @@ class LoginController extends CI_Controller
 
     public function index()
     {
+        //var_dump($this->session->userdata('id'));
         $this->load->view('login');
     }
 
