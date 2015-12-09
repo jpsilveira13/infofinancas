@@ -47,18 +47,24 @@
 
                         <!-- Menu Perfil -->
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                            <li><a href="<?php echo base_url() ?>assets/profile.html">Profile</a></li>
-                            <li><a href="<?php echo base_url() ?>assets/contacts.html">Contacts</a></li>
-                            <li><a href="<?php echo base_url() ?>assets/mailbox.html">Mailbox</a></li>
+                            <li><a href="<?php echo base_url() ?>HomeController/index?">Perfil</a></li>
                             <li class="divider"></li>
                             <li><a href="<?php echo base_url() ?>">Logout</a></li>
                         </ul>
 
                     </div>
+                    <div class="logo-element">
+                        <i class="fa fa-calculator"></i>
+                    </div>
                 </li>
 
                 <li>
                     <!-- Calendario aqui -->
+                </li>
+
+                <li class="active">
+                    <a href="<?php echo base_url() ?>HomeController/index?"><i class="fa fa-home"></i> <span
+                            class="nav-label">Página Inicial</span></a>
                 </li>
 
             </ul>
@@ -75,9 +81,16 @@
                 <div class="navbar-header">
                     <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i>
                     </a>
-
-
                 </div>
+
+                <ul class="nav navbar-top-links navbar-left">
+                    <li>
+                        <a href="<?php echo base_url() ?>HomeController/index?">
+                            Dynado Finanças
+                        </a>
+                    </li>
+                </ul>
+
                 <ul class="nav navbar-top-links navbar-right">
 
 
@@ -164,7 +177,127 @@
                                         <canvas id="lineChart" height="140"></canvas>
                                     </div>
                                 </div>
-                            </div><br/><br/>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="pull-left">
+                                        <button type="button" class="btn btn-w-m btn-danger" data-toggle="modal"
+                                                data-target="#DespesaModal">
+                                            Nova Despesa
+                                        </button>
+                                        <div class="modal inmodal" id="DespesaModal" tabindex="-1" role="dialog"
+                                             aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content animated fadeIn">
+                                                    <form class="form-horizontal">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal">
+                                                                <span aria-hidden="true">&times;</span><span
+                                                                    class="sr-only">Close</span></button>
+                                                            <h4 class="modal-title">Nova Despesa</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p>Cadastrando uma nova despesa.</p>
+
+                                                            <div class="form-group"><label
+                                                                    class="col-lg-2 control-label">Nome</label>
+
+                                                                <div class="col-lg-10"><input type="text"
+                                                                                              placeholder="Nome"
+                                                                                              class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group"><label
+                                                                    class="col-lg-2 control-label">Descrição</label>
+
+                                                                <div class="col-lg-10"><input type="text"
+                                                                                              placeholder="Descricao"
+                                                                                              class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group"><label
+                                                                    class="col-lg-2 control-label">Valor</label>
+
+                                                                <div class="col-lg-10"><input type="text"
+                                                                                              placeholder="Valor"
+                                                                                              class="form-control">
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-white"
+                                                                    data-dismiss="modal">Cancelar
+                                                            </button>
+                                                            <button class="btn btn-primary" type="submit">Salvar
+                                                            </button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pull-right">
+                                        <button type="button" class="btn btn-w-m btn-primary" data-toggle="modal"
+                                                data-target="#EntradaModal">
+                                            Nova Entrada
+                                        </button>
+                                        <div class="modal inmodal" id="EntradaModal" tabindex="-1" role="dialog"
+                                             aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content animated fadeIn">
+                                                    <form class="form-horizontal">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal">
+                                                                <span aria-hidden="true">&times;</span><span
+                                                                    class="sr-only">Close</span></button>
+                                                            <h4 class="modal-title">Nova Entrada</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p>Cadastrando uma nova entrada.</p>
+
+                                                            <div class="form-group"><label
+                                                                    class="col-lg-2 control-label">Nome</label>
+
+                                                                <div class="col-lg-10"><input type="text"
+                                                                                              placeholder="Nome"
+                                                                                              class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group"><label
+                                                                    class="col-lg-2 control-label">Descrição</label>
+
+                                                                <div class="col-lg-10"><input type="text"
+                                                                                              placeholder="Descricao"
+                                                                                              class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group"><label
+                                                                    class="col-lg-2 control-label">Valor</label>
+
+                                                                <div class="col-lg-10"><input type="text"
+                                                                                              placeholder="Valor"
+                                                                                              class="form-control">
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-white"
+                                                                    data-dismiss="modal">Cancelar
+                                                            </button>
+                                                            <button class="btn btn-primary" type="submit">Salvar
+                                                            </button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
 
                     </div>
