@@ -17,7 +17,7 @@ class HomeController extends CI_Controller
 
     }
 
-    public function index()
+    public function index()//padrão para chamar a home
     {
         $this->load->view('home');
     }
@@ -45,5 +45,10 @@ class HomeController extends CI_Controller
         $this->CadastrarModel->inserir($data);//chama a função inserir e passa os dados como parametros
 
         $this->load->view('home');//carrega a view home
+    }
+
+    public function buscarDados(){
+        $dados = [10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65];
+        return $dados;
     }
 }

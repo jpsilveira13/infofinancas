@@ -506,6 +506,8 @@
 
         }, 1300);
 
+        $dados = "<?php base_url()?>HomeController/buscarDados";
+
         var lineData = {
             labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
             datasets: [
@@ -517,7 +519,7 @@
                     pointStrokeColor: "#fff",
                     pointHighlightFill: "#fff",
                     pointHighlightStroke: "rgba(220,220,220,1)",
-                    data: [65, 59, 80, 81, 56, 55, 40,65, 59, 80, 81, 56]
+                    data: [$dados]
                 },
                 {
                     label: "Example dataset",
