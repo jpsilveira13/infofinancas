@@ -17,8 +17,9 @@ class MovimentacaoModel extends CI_Model
         parent::__construct();
     }
 
-    public function getMovimentacoes()
+    public function getMovimentacoes($idUsuario)
     {
+        $this->db->where("idUsuario", $idUsuario);
         return $this->db->get("movimentacao")->result();
     }
 

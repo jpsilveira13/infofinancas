@@ -19,7 +19,7 @@ class HomeController extends CI_Controller
     public function index()//padrão para chamar a home
     {
         if ($this->session->userdata('id')) {
-            $data['movimentacoes'] = $this->MovimentacaoModel->getMovimentacoes();
+            $data['movimentacoes'] = $this->MovimentacaoModel->getMovimentacoes($this->session->userdata('id'));
             $this->load->view('home', $data);
         } else {
             $this->load->view('login');
