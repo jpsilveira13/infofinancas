@@ -42,7 +42,7 @@ class HomeController extends CI_Controller
     public function login()//para login normal
     {
         $data['email'] = $_POST['email'];// pega via post o email que venho do formulario
-        $data['senha'] = $_POST['senha']; // pega via post a senha que venho do formulario
+        $data['senha'] = md5($_POST['senha']); // pega via post a senha que venho do formulario
         $usuario = $this->LoginModel->buscaPorEmailSenha($data['email'], $data['senha']); // acessa a função buscaPorEmailSenha do modelo
 
         if ($usuario) {
@@ -73,7 +73,7 @@ class HomeController extends CI_Controller
     {
         $data['nome'] = $_POST['nome'];//recebe o nome digitado
         $data['email'] = $_POST['email'];//recebe o email digitado
-        $data['senha'] = $_POST['senha'];//recebe a senha digitada
+        $data['senha'] = md5($_POST['senha']);//recebe a senha digitada
 
         $this->CadastrarModel->inserir($data);//chama a função inserir e passa os dados como parametros
 

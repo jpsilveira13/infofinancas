@@ -151,13 +151,25 @@
 
                                     <div class="modal-dialog">
                                         <div class="modal-content animated bounceInDown">
-
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal"><span
+                                                        aria-hidden="true">&times;</span><span
+                                                        class="sr-only">Cancelar</span></button>
+                                                <h4>Perfil | Imagem</h4>
+                                            </div>
                                             <div class="modal-body">
-                                                <?php echo form_open_multipart('ProfileController/upload'); ?>
-                                                <input type="file" name="arquivo" id="arquivo" size="200" />
-                                                <br>
-                                                <input type="submit" value="Enviar" />
-
+                                                <div class="row-fluid">
+                                                    <h5>Selecionar arquivo</h5>
+                                                    <?php echo form_open_multipart('ProfileController/upload'); ?>
+                                                    <input type="file" name="arquivo" id="arquivo" size="200" />
+                                                    <br>
+                                                    <div class="modal-footer">
+                                                        <button class="btn btn-primary note-image-btn"
+                                                                type="submit">
+                                                            Inserir Imagem
+                                                        </button>
+                                                    </div>
+                                                </div>
 
                                                 </form>
                                             </div>
