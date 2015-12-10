@@ -9,7 +9,7 @@ class MovimentacaoModel extends CI_Model
     public $tipo;
     public $valor;
     public $vencimento;
-    public $frequecia;
+    public $frequencia;
     public $parcelas;
 
     public function __construct()

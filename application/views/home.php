@@ -17,6 +17,9 @@
     <!-- Gritter -->
     <link href="<?php echo base_url() ?>/assets/js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
 
+    <!-- DataPicker -->
+    <link href="<?php echo base_url() ?>/assets/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+
     <link href="<?php echo base_url() ?>/assets/css/animate.css" rel="stylesheet">
     <link href="<?php echo base_url() ?>/assets/css/style.css" rel="stylesheet">
 
@@ -43,7 +46,7 @@
                             <span class="clear">
                                 <span class="block m-t-xs">
                                     <strong class="font-bold">
-                                        <?php echo $this->session->userdata('nome')?><!-- pegando valor da session -->
+                                        <?php echo $this->session->userdata('nome') ?><!-- pegando valor da session -->
                                     </strong>
                              </span> <span class="text-muted text-xs block">Dados Perfil <b
                                         class="caret"></b></span> </span> </a>
@@ -185,118 +188,14 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="pull-left">
-                                        <button type="button" class="btn btn-w-m btn-danger" data-toggle="modal"
-                                                data-target="#DespesaModal">
-                                            Nova Despesa
-                                        </button>
-                                        <div class="modal inmodal" id="DespesaModal" tabindex="-1" role="dialog"
-                                             aria-hidden="true">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content animated fadeIn">
-                                                    <form action="<?php echo base_url() ?>MovimentacaoController/index?" method="post" class="form-horizontal">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal">
-                                                                <span aria-hidden="true">&times;</span><span
-                                                                    class="sr-only">Close</span></button>
-                                                            <h4 class="modal-title">Nova Despesa</h4>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <p>Cadastrando uma nova despesa.</p>
-
-                                                            <div class="form-group"><label
-                                                                    class="col-lg-2 control-label">Nome</label>
-
-                                                                <div class="col-lg-10"><input type="text"
-                                                                                              placeholder="Nome"
-                                                                                              class="form-control">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group"><label
-                                                                    class="col-lg-2 control-label">Descrição</label>
-
-                                                                <div class="col-lg-10"><input type="text"
-                                                                                              placeholder="Descricao"
-                                                                                              class="form-control">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group"><label
-                                                                    class="col-lg-2 control-label">Valor</label>
-
-                                                                <div class="col-lg-10"><input type="text"
-                                                                                              placeholder="Valor"
-                                                                                              class="form-control">
-                                                                </div>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-white"
-                                                                    data-dismiss="modal">Cancelar
-                                                            </button>
-                                                            <button class="btn btn-primary" type="submit">Salvar
-                                                            </button>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <form action="<?php echo base_url() ?>MovimentacaoController">
+                                            <input type="submit" value="Nova Despesa" class="btn btn-w-m btn-danger">
+                                        </form>
                                     </div>
                                     <div class="pull-right">
-                                        <button type="button" class="btn btn-w-m btn-primary" data-toggle="modal"
-                                                data-target="#EntradaModal">
-                                            Nova Entrada
-                                        </button>
-                                        <div class="modal inmodal" id="EntradaModal" tabindex="-1" role="dialog"
-                                             aria-hidden="true">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content animated fadeIn">
-                                                    <form class="form-horizontal">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal">
-                                                                <span aria-hidden="true">&times;</span><span
-                                                                    class="sr-only">Close</span></button>
-                                                            <h4 class="modal-title">Nova Entrada</h4>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <p>Cadastrando uma nova entrada.</p>
-
-                                                            <div class="form-group"><label
-                                                                    class="col-lg-2 control-label">Nome</label>
-
-                                                                <div class="col-lg-10"><input type="text"
-                                                                                              placeholder="Nome"
-                                                                                              class="form-control">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group"><label
-                                                                    class="col-lg-2 control-label">Descrição</label>
-
-                                                                <div class="col-lg-10"><input type="text"
-                                                                                              placeholder="Descricao"
-                                                                                              class="form-control">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group"><label
-                                                                    class="col-lg-2 control-label">Valor</label>
-
-                                                                <div class="col-lg-10"><input type="text"
-                                                                                              placeholder="Valor"
-                                                                                              class="form-control">
-                                                                </div>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-white"
-                                                                    data-dismiss="modal">Cancelar
-                                                            </button>
-                                                            <button class="btn btn-primary" type="submit">Salvar
-                                                            </button>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <form action="<?php echo base_url() ?>MovimentacaoController">
+                                            <input type="submit" value="Nova Entrada" class="btn btn-w-m btn-primary">
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -495,9 +394,20 @@
 <!-- ChartJS-->
 <script src="<?php echo base_url() ?>/assets/js/plugins/chartJs/Chart.min.js"></script>
 
+<!-- DataPicker -->
+<script src="<?php echo base_url() ?>/assets/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+
 <script>
 
     $(document).ready(function () {
+        $('#data_1 .input-group.date').datepicker({
+            todayBtn: "linked",
+            keyboardNavigation: false,
+            forceParse: false,
+            calendarWeeks: true,
+            autoclose: true
+        });
+
         setTimeout(function () {
             toastr.options = {
                 closeButton: true,
@@ -521,7 +431,7 @@
                     pointStrokeColor: "#fff",
                     pointHighlightFill: "#fff",
                     pointHighlightStroke: "rgba(220,220,220,1)",
-                    data: [ 27, 90, 28, 48, 40, 19, 40, 19, 86, 27, 19, 86]
+                    data: [27, 90, 28, 48, 40, 19, 40, 19, 86, 27, 19, 86]
                 },
                 {
                     label: "Example dataset",
