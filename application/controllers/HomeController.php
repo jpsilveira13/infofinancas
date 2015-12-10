@@ -55,7 +55,7 @@ class HomeController extends CI_Controller
 
         $this->CadastrarModel->inserir($data);//chama a função inserir e passa os dados como parametros
 
-        $this->load->view('home');//carrega a view home
+        $this->load->view('login');//carrega a view home
     }
 
     public function buscarDados(){

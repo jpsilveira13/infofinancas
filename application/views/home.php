@@ -193,7 +193,7 @@
                                              aria-hidden="true">
                                             <div class="modal-dialog">
                                                 <div class="modal-content animated fadeIn">
-                                                    <form class="form-horizontal">
+                                                    <form action="<?php echo base_url() ?>MovimentacaoController/index?" method="post" class="form-horizontal">
                                                         <div class="modal-header">
                                                             <button type="button" class="close" data-dismiss="modal">
                                                                 <span aria-hidden="true">&times;</span><span

@@ -46,8 +46,7 @@
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
                             <li><a href="<?php echo base_url() ?>ProfileController">Perfil</a></li>
                             <li class="divider"></li>
-                            <li><a href="<?php echo base_url();
-                                $this->session->sess_destroy(); ?>">Sair</a></li>
+                            <li><a href="<?php echo base_url() ?>">Sair</a></li>
                         </ul>
 
                     </div>
