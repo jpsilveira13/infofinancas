@@ -46,8 +46,8 @@
 
                         <!-- Dados Perfil -->
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Nome
-                                        usuário</strong>
+                            <span class="clear"> <span class="block m-t-xs">
+                                    <strong class="font-bold"><?php echo $this->session->userdata('nome') ?></strong>
                              </span> <span class="text-muted text-xs block">Dados Perfil <b
                                         class="caret"></b></span> </span> </a>
 
@@ -139,17 +139,17 @@
                             <div class="ibox-content no-padding border-left-right">
 
                                 <button type="button" class="no-borders no-margins no-padding" data-toggle="modal"
-                                        data-target="#inserirModal">    <!-- imagem de perfil -->
+                                        data-target="#inserirModal">
                                     <img alt="image" class="img-responsive img-preview"
-                                                 src="<?php echo base_url() ?>/assets/img/icon-user-default.jpg">
+                                         src="<?php echo base_url() ?>/assets/img/icon-user-default.jpg">
+                                    <!-- imagem de perfil -->
                                 </button>
-                                <!-- imagem de perfil -->
 
                                 <div id="inserirModal" class="note-image-dialog modal in" aria-hidden="false">
                                     <!-- modal para inserir imagens -->
 
                                     <div class="modal-dialog">
-                                        <div class="modal-content animated bounceInRight">
+                                        <div class="modal-content animated bounceInDown">
                                             <div class="modal-header">
                                                 <button type="button" class="close" data-dismiss="modal"><span
                                                         aria-hidden="true">&times;</span><span
@@ -167,9 +167,8 @@
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button href="#" class="btn btn-primary note-image-btn disabled"
-                                                        disabled="disabled">
-                                                    Insert Image
+                                                <button  class="btn btn-primary note-image-btn" href="<?php echo base_url() ?>ProfileController/upload">
+                                                    Inserir Imagem
                                                 </button>
                                             </div>
                                         </div>
@@ -180,7 +179,7 @@
                             </div>
 
                             <div class="ibox-content profile-content">     <!-- parte das informações -->
-                                <h4><strong>Monica Smith</strong></h4>
+                                <h4><strong><?php echo $this->session->userdata('nome') ?></strong></h4>
 
                                 <div class="ibox float-e-margins">    <!--caixa da descrição editável -->
                                     <div class="ibox-title">
@@ -215,33 +214,93 @@
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
                             <h5>Dados</h5>
-                            <button id="edit" class="btn btn-primary btn-xs m-l-sm " onclick="habilitaCampo()"
-                                    type="button">
+                            <button type="button" class="btn btn-primary btn-xs m-l-sm " data-toggle="modal"
+                                    data-target="#editarModal">
                                 Editar
                             </button>
                         </div>
 
+                        <div id="editarModal" class="modal inmodal" aria-hidden="false">
+                            <div class="modal-dialog">
+                                <div class="modal-content animated bounceInDown">
+                                    <div class="modal-header">
 
+                                        <i class="fa fa-edit modal-icon"></i>
+
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label">Nome</label>
+
+                                            <div class="col-lg-10">
+                                                <input id="nome" type="text"
+                                                       placeholder="<?php echo $this->session->userdata('nome') ?>"
+                                                       class="form-control" >
+                                            </div>
+                                        </div>
+                                        <br><br>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label">Email</label>
+
+                                            <div class="col-lg-10">
+                                                <input id="email" type="text"
+                                                       placeholder="<?php echo $this->session->userdata('email') ?>"
+                                                       class="form-control" >
+                                            </div>
+                                        </div>
+                                        <br><br>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label">Senha</label>
+
+                                            <div class="col-lg-10">
+                                                <input id="senha" type="text"
+                                                       placeholder="<?php echo $this->session->userdata('senha') ?>"
+                                                       class="form-control" >
+                                            </div>
+                                        </div>
+
+                                    </div> <!-- alterar as informações -->
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="ibox-content">
-                            <div class="form-group">
+                            <div class="form-group"> <!-- mostrar as informações -->
                                 <label class="col-lg-2 control-label">Nome</label>
+
                                 <div class="col-lg-10">
-                                    <input name="nome" type="text" disabled placeholder="Disabled input here..." class="form-control">
+                                    <input id="nome" type="text"
+                                           placeholder="<?php echo $this->session->userdata('nome') ?>"
+                                           class="form-control" disabled>
                                 </div>
                             </div>
                             <br><br>
+
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">Email</label>
+
                                 <div class="col-lg-10">
-                                    <input name="email" type="text" disabled placeholder="Disabled input here..." class="form-control">
+                                    <input id="email" type="text"
+                                           placeholder="<?php echo $this->session->userdata('email') ?>"
+                                           class="form-control" disabled>
                                 </div>
                             </div>
                             <br><br>
+
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">Senha</label>
+
                                 <div class="col-lg-10">
-                                    <input name="senha" type="text" disabled placeholder="Disabled input here..." class="form-control">
+                                    <input id="senha" type="text"
+                                           placeholder="<?php echo $this->session->userdata('senha') ?>"
+                                           class="form-control" disabled>
                                 </div>
                             </div>
                             <br><br>
@@ -252,193 +311,7 @@
                 </div>
 
 
-                <!-- <div class="col-md-8">
-                    <div class="ibox float-e-margins">
-                        <div class="ibox-title">
-                            <h5>Activites</h5>
-
-                            <div class="ibox-tools">
-                                <a class="collapse-link">
-                                    <i class="fa fa-chevron-up"></i>
-                                </a>
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                    <i class="fa fa-wrench"></i>
-                                </a>
-                                <ul class="dropdown-menu dropdown-user">
-                                    <li><a href="#">Config option 1</a>
-                                    </li>
-                                    <li><a href="#">Config option 2</a>
-                                    </li>
-                                </ul>
-                                <a class="close-link">
-                                    <i class="fa fa-times"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="ibox-content">
-
-                            <div>
-                                <div class="feed-activity-list">
-
-                                    <div class="feed-element">
-                                        <a href="#" class="pull-left">
-                                            <img alt="image" class="img-circle"
-                                                 src="<?php echo base_url() ?>/assets/img/a1.jpg">
-                                        </a>
-
-                                        <div class="media-body ">
-                                            <small class="pull-right text-navy">1m ago</small>
-                                            <strong>Sandra Momot</strong> started following <strong>Monica
-                                                Smith</strong>. <br>
-                                            <small class="text-muted">Today 4:21 pm - 12.06.2014</small>
-                                            <div class="actions">
-                                                <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like
-                                                </a>
-                                                <a class="btn btn-xs btn-danger"><i class="fa fa-heart"></i> Love</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="feed-element">
-                                        <a href="#" class="pull-left">
-                                            <img alt="image" class="img-circle"
-                                                 src="<?php echo base_url() ?>/assets/img/profile.jpg">
-                                        </a>
-
-                                        <div class="media-body ">
-                                            <small class="pull-right">5m ago</small>
-                                            <strong>Monica Smith</strong> posted a new blog. <br>
-                                            <small class="text-muted">Today 5:60 pm - 12.06.2014</small>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="feed-element">
-                                        <a href="#" class="pull-left">
-                                            <img alt="image" class="img-circle" src="img/a2.jpg">
-                                        </a>
-
-                                        <div class="media-body ">
-                                            <small class="pull-right">2h ago</small>
-                                            <strong>Mark Johnson</strong> posted message on <strong>Monica
-                                                Smith</strong> site. <br>
-                                            <small class="text-muted">Today 2:10 pm - 12.06.2014</small>
-                                            <div class="well">
-                                                Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                industry. Lorem Ipsum has been the industry's standard dummy text ever
-                                                since the 1500s.
-                                                Over the years, sometimes by accident, sometimes on purpose (injected
-                                                humour and the like).
-                                            </div>
-                                            <div class="pull-right">
-                                                <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like
-                                                </a>
-                                                <a class="btn btn-xs btn-white"><i class="fa fa-heart"></i> Love</a>
-                                                <a class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i>
-                                                    Message</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="feed-element">
-                                        <a href="#" class="pull-left">
-                                            <img alt="image" class="img-circle"
-                                                 src="<?php echo base_url() ?>/assets/img/a3.jpg">
-                                        </a>
-
-                                        <div class="media-body ">
-                                            <small class="pull-right">2h ago</small>
-                                            <strong>Janet Rosowski</strong> add 1 photo on <strong>Monica Smith</strong>.
-                                            <br>
-                                            <small class="text-muted">2 days ago at 8:30am</small>
-                                            <div class="photos">
-                                                <a target="_blank"
-                                                   href="http://24.media.tumblr.com/20a9c501846f50c1271210639987000f/tumblr_n4vje69pJm1st5lhmo1_1280.jpg">
-                                                    <img alt="image" class="feed-photo" src="img/p1.jpg"></a>
-                                                <a target="_blank"
-                                                   href="http://37.media.tumblr.com/9afe602b3e624aff6681b0b51f5a062b/tumblr_n4ef69szs71st5lhmo1_1280.jpg">
-                                                    <img alt="image" class="feed-photo" src="img/p3.jpg"></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="feed-element">
-                                        <a href="#" class="pull-left">
-                                            <img alt="image" class="img-circle"
-                                                 src="<?php echo base_url() ?>/assets/img/a4.jpg">
-                                        </a>
-
-                                        <div class="media-body ">
-                                            <small class="pull-right text-navy">5h ago</small>
-                                            <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica
-                                                Smith</strong>. <br>
-                                            <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
-                                            <div class="actions">
-                                                <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like
-                                                </a>
-                                                <a class="btn btn-xs btn-white"><i class="fa fa-heart"></i> Love</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="feed-element">
-                                        <a href="#" class="pull-left">
-                                            <img alt="image" class="img-circle"
-                                                 src="<?php echo base_url() ?>/assets/img/a5.jpg">
-                                        </a>
-
-                                        <div class="media-body ">
-                                            <small class="pull-right">2h ago</small>
-                                            <strong>Kim Smith</strong> posted message on <strong>Monica Smith</strong>
-                                            site. <br>
-                                            <small class="text-muted">Yesterday 5:20 pm - 12.06.2014</small>
-                                            <div class="well">
-                                                Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                industry. Lorem Ipsum has been the industry's standard dummy text ever
-                                                since the 1500s.
-                                                Over the years, sometimes by accident, sometimes on purpose (injected
-                                                humour and the like).
-                                            </div>
-                                            <div class="pull-right">
-                                                <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="feed-element">
-                                        <a href="#" class="pull-left">
-                                            <img alt="image" class="img-circle"
-                                                 src="<?php echo base_url() ?>/assets/img/profile.jpg">
-                                        </a>
-
-                                        <div class="media-body ">
-                                            <small class="pull-right">23h ago</small>
-                                            <strong>Monica Smith</strong> love <strong>Kim Smith</strong>. <br>
-                                            <small class="text-muted">2 days ago at 2:30 am - 11.06.2014</small>
-                                        </div>
-                                    </div>
-                                    <div class="feed-element">
-                                        <a href="#" class="pull-left">
-                                            <img alt="image" class="img-circle"
-                                                 src="<?php echo base_url() ?>/assets/img/a7.jpg">
-                                        </a>
-
-                                        <div class="media-body ">
-                                            <small class="pull-right">46h ago</small>
-                                            <strong>Mike Loreipsum</strong> started following <strong>Monica
-                                                Smith</strong>. <br>
-                                            <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <button class="btn btn-primary btn-block m"><i class="fa fa-arrow-down"></i> Show More
-                                </button>
-
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>-->
-            </div>
+            </div class="row animated fadeInDown">
         </div>
         <div class="footer">
             <div class="pull-right">
@@ -508,11 +381,10 @@
         var aHTML = $('.click2edit').code(); //save HTML If you need(aHTML: array).
         $('.click2edit').destroy();
     };
-    var habilitaCampo = function (){
-        $(document.getElementsByName('nome')).disable(false);
-        $(document.getElementsByName('email')).disable(false);
-        $(document.getElementsByName('senha')).disable(false);
+    var habilitaCampo = function () {
+
     };
+
 </script>
 
 </body>

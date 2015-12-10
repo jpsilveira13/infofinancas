@@ -45,7 +45,7 @@
 
         <form class="m-t" role="form" action="<?php echo base_url() ?>HomeController/login" method="post">
             <div class="form-group">
-                <input type="email" class="form-control" placeholder="Nome" required="" name="email">
+                <input type="email" class="form-control" placeholder="Email" required="" name="email">
             </div>
             <div class="form-group">
                 <input type="password" class="form-control" placeholder="Senha" required="" name="senha">
