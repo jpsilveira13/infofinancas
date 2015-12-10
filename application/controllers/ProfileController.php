@@ -10,6 +10,9 @@ class ProfileController extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+
+        $this->load->database();// chama as configs do ../config/database.php
+        $this->load->model('UpdateModel');// chama o modelo CadastrarModel
     }
 
     public function index()//para login normal
@@ -35,5 +38,15 @@ class ProfileController extends CI_Controller
             $this->load->view('upload_success', $data);
         }
 
+    }
+
+    public function editar()
+    {
+        $data['nome'] = $_POST['nome'];//recebe o nome digitado
+        $data['email'] = $_POST['email'];//recebe o email digitado
+        $data['senha'] = $_POST['senha'];//recebe a senha digitada
+        $data['id'] = $this->session->userdata('id');//pega o id da session atual
+
+        $this->UpdateModel->editar($data);
     }
 }

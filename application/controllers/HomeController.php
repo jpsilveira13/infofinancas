@@ -77,4 +77,6 @@ class HomeController extends CI_Controller
         $data['response'] = json_encode(['status' => 'SUCCESS', 'title' => 'Sucesso', 'message' => 'Crie sua conta']);
         $this->load->view('register', $data);
     }
+
+
 }

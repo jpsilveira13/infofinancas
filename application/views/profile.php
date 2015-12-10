@@ -167,7 +167,8 @@
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button  class="btn btn-primary note-image-btn" href="<?php echo base_url() ?>ProfileController/upload">
+                                                <button class="btn btn-primary note-image-btn"
+                                                        href="<?php echo base_url() ?>ProfileController/upload">
                                                     Inserir Imagem
                                                 </button>
                                             </div>
@@ -188,14 +189,16 @@
                                                 type="button">
                                             Editar
                                         </button>
-                                        <button id="c" class="btn btn-primary  btn-xs" onclick="save()" type="button">
+                                        <button id="save" class="btn btn-primary  btn-xs" onclick="save()"
+                                                type="button">
                                             Salvar
                                         </button>
 
                                     </div>
                                     <div class="ibox-content no-paddings">
 
-                                        <div class="click2edit wrapper p-md table-bordered border-bottom">
+                                        <div id="descricao"
+                                             class="click2edit wrapper p-md table-bordered border-bottom">
 
                                         </div>
 
@@ -228,48 +231,53 @@
                                         <i class="fa fa-edit modal-icon"></i>
 
                                     </div>
-                                    <div class="modal-body">
+                                    <form class="m-t" role="form" action="<?php echo base_url() ?>ProfileController/editar"
+                                          method="post">
+                                        <div class="modal-body">
 
-                                        <div class="form-group">
-                                            <label class="col-lg-2 control-label">Nome</label>
 
-                                            <div class="col-lg-10">
-                                                <input id="nome" type="text"
-                                                       placeholder="<?php echo $this->session->userdata('nome') ?>"
-                                                       class="form-control" >
+                                            <div class="form-group">
+                                                <label class="col-lg-2 control-label">Nome</label>
+
+
+                                                <div class="col-lg-10">
+                                                    <input name="nome" type="text" value="<?php echo $this->session->userdata('nome') ?>" class="form-control">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <br><br>
+                                            <br><br>
 
-                                        <div class="form-group">
-                                            <label class="col-lg-2 control-label">Email</label>
+                                            <div class="form-group">
+                                                <label class="col-lg-2 control-label">Email</label>
 
-                                            <div class="col-lg-10">
-                                                <input id="email" type="text"
-                                                       placeholder="<?php echo $this->session->userdata('email') ?>"
-                                                       class="form-control" >
+                                                <div class="col-lg-10">
+                                                    <input name="email" type="text"
+                                                           value="<?php echo $this->session->userdata('email') ?>"
+                                                           class="form-control">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <br><br>
+                                            <br><br>
 
-                                        <div class="form-group">
-                                            <label class="col-lg-2 control-label">Senha</label>
+                                            <div class="form-group">
+                                                <label class="col-lg-2 control-label">Senha</label>
 
-                                            <div class="col-lg-10">
-                                                <input id="senha" type="text"
-                                                       placeholder="<?php echo $this->session->userdata('senha') ?>"
-                                                       class="form-control" >
+                                                <div class="col-lg-10">
+                                                    <input name="senha" type="text"
+                                                           value="<?php echo $this->session->userdata('senha') ?>"
+                                                           class="form-control">
+                                                </div>
                                             </div>
-                                        </div>
 
-                                    </div> <!-- alterar as informações -->
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
-                                    </div>
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-white" data-dismiss="modal">Cancelar
+                                            </button>
+                                            <button type="submit" class="btn btn-primary">Salvar</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
-                        </div>
+                        </div> <!-- alterar as informações -->
 
                         <div class="ibox-content">
                             <div class="form-group"> <!-- mostrar as informações -->
@@ -345,7 +353,7 @@
 <!-- SUMMERNOTE -->
 <script src="<?php echo base_url() ?>/assets/js/plugins/summernote/summernote.min.js"></script>
 
-<div id="idDiv" style="display:none"><?php echo $response;?></div>
+<div id="idDiv" style="display:none"><?php echo $response; ?></div>
 
 <script>
     $(document).ready(function () {
@@ -361,11 +369,11 @@
                 timeOut: 5000
             };
 
-            if($response.status == 'SUCCESS'){
+            if ($response.status == 'SUCCESS') {
                 toastr.success($response.message, $response.title);
             }
 
-            if($response.status == 'ERROR'){
+            if ($response.status == 'ERROR') {
                 toastr.error($response.message, $response.title);
             }
 
@@ -380,10 +388,9 @@
     var save = function () {
         var aHTML = $('.click2edit').code(); //save HTML If you need(aHTML: array).
         $('.click2edit').destroy();
-    };
-    var habilitaCampo = function () {
 
     };
+
 
 </script>
 

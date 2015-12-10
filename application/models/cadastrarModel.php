@@ -17,5 +17,6 @@ class CadastrarModel extends CI_Model
         return $this->db->insert('usuario', $data);
     }
 
+
 }
 
