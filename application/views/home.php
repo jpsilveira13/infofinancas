@@ -187,16 +187,9 @@
 
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <div class="pull-left">
-                                        <form action="<?php echo base_url() ?>MovimentacaoController">
-                                            <input type="submit" value="Nova Despesa" class="btn btn-w-m btn-danger">
-                                        </form>
-                                    </div>
-                                    <div class="pull-right">
-                                        <form action="<?php echo base_url() ?>MovimentacaoController">
-                                            <input type="submit" value="Nova Entrada" class="btn btn-w-m btn-primary">
-                                        </form>
-                                    </div>
+                                    <form action="<?php echo base_url() ?>MovimentacaoController">
+                                        <input type="submit" value="Nova Movimentação" class="form-control btn btn-w-m btn-primary">
+                                    </form>
                                 </div>
                             </div>
 

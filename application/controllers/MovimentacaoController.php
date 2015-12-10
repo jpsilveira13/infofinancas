@@ -25,12 +25,11 @@ class MovimentacaoController extends CI_Controller
         $this->form_validation->set_rules('descricao', 'Descrição', 'required');
         $this->form_validation->set_rules('tipo', 'Tipo', 'required');
         $this->form_validation->set_rules('vencimento', 'Vencimento', 'required');
-        $this->form_validation->set_rules('valor', 'Valor', 'required|decimal');
+        $this->form_validation->set_rules('valor', 'Valor', 'required|numeric');
         $this->form_validation->set_rules('frequencia', 'Frequencia', 'required');
-        $this->form_validation->set_rules('parcelas', 'Parcela', 'required|numeric');
+        $this->form_validation->set_rules('parcelas', 'Parcelas', 'required|numeric');
 
         $this->form_validation->set_message('required', 'O campo %s é obrigatório.');
-        $this->form_validation->set_message('decimal', 'O campo %s deve conter um número decimal.');
         $this->form_validation->set_message('numeric', 'O campo %s deve conter um número.');
 
         //$this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
