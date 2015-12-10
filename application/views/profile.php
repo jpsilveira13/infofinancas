@@ -148,41 +148,45 @@
                                 <div id="inserirModal" class="note-image-dialog modal in" aria-hidden="false">
                                     <!-- modal para inserir imagens -->
 
-                                    <div class="modal-dialog">
-                                        <div class="modal-content animated bounceInDown">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal"><span
-                                                        aria-hidden="true">&times;</span><span
-                                                        class="sr-only">Close</span></button>
-                                                <h4>Insira Imagem</h4>
-                                            </div>
-
-                                            <div class="modal-body">
-                                                <div class="row-fluid">
-                                                    <h5>Selecionar arquivo</h5>
-                                                    <input class="note-image-input" type="file" name="files"
-                                                           accept="image/*">
-                                                    <h5>Image URL</h5>
-                                                    <input class="note-image-url form-control span12" type="text">
+                                    <form name="upload" action="<?php echo base_url() ?>ProfileController/upload">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content animated bounceInDown">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal"><span
+                                                            aria-hidden="true">&times;</span><span
+                                                            class="sr-only">Cancelar</span></button>
+                                                    <h4>Perfil | Imagem</h4>
                                                 </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button class="btn btn-primary note-image-btn"
-                                                        href="<?php echo base_url() ?>ProfileController/upload">
-                                                    Inserir Imagem
-                                                </button>
+
+                                                <div class="modal-body">
+                                                    <div class="row-fluid">
+                                                        <h5>Selecionar arquivo</h5>
+                                                        <input type="file" name="imagem" size="200"/>
+                                                        <br>
+
+                                                        <div class="modal-footer">
+                                                            <button class="btn btn-primary note-image-btn"
+                                                                    type="submit">
+                                                                Inserir Imagem
+                                                            </button>
+                                                        </div>
+                                                        </body>
+                                                        </html>
+                                                    </div>
+                                                </div>
+
                                             </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 </div>
                                 <!-- modal para inserir imagens -->
 
-                                <div >
+                                <div>
                                     <div class="ibox float-e-margins">
                                         <div>
-
                                             <div class="ibox-tools">
-                                                <button type="button" class="btn btn-primary btn-xs m-l-sm " data-toggle="modal"
+                                                <button type="button" class="btn btn-primary btn-xs m-l-sm "
+                                                        data-toggle="modal"
                                                         data-target="#editarDescricaoModal">
                                                     Editar
                                                 </button>
@@ -197,7 +201,8 @@
                                                         <i class="fa fa-edit modal-icon"></i>
 
                                                     </div>
-                                                    <form class="m-t" role="form" action="<?php echo base_url() ?>ProfileController/setDescricao"
+                                                    <form class="m-t" role="form"
+                                                          action="<?php echo base_url() ?>ProfileController/setDescricao"
                                                           method="post">
                                                         <div class="modal-body">
 
@@ -207,16 +212,20 @@
 
 
                                                                 <div class="col-lg-10">
-                                                                    <input name="descricao" type="text" value="<?php echo $this->session->userdata('descricao') ?>" class="form-control">
+                                                                    <input name="descricao" type="text"
+                                                                           value="<?php echo $this->session->userdata('descricao') ?>"
+                                                                           class="form-control">
                                                                 </div>
                                                             </div>
                                                             <br><br>
 
                                                         </div>
                                                         <div class="modal-footer">
-                                                            <button type="button" class="btn btn-white" data-dismiss="modal">Cancelar
+                                                            <button type="button" class="btn btn-white"
+                                                                    data-dismiss="modal">Cancelar
                                                             </button>
-                                                            <button type="submit" class="btn btn-primary">Salvar</button>
+                                                            <button type="submit" class="btn btn-primary">Salvar
+                                                            </button>
                                                         </div>
                                                     </form>
                                                 </div>
@@ -251,11 +260,12 @@
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
                             <h5>Dados</h5>
+
                             <div class="ibox-tools">
-                            <button type="button" class="btn btn-primary btn-xs m-l-sm " data-toggle="modal"
-                                    data-target="#editarModal">
-                                Editar
-                            </button>
+                                <button type="button" class="btn btn-primary btn-xs m-l-sm " data-toggle="modal"
+                                        data-target="#editarModal">
+                                    Editar
+                                </button>
                             </div>
                         </div>
 
@@ -267,7 +277,8 @@
                                         <i class="fa fa-edit modal-icon"></i>
 
                                     </div>
-                                    <form class="m-t" role="form" action="<?php echo base_url() ?>ProfileController/editar"
+                                    <form class="m-t" role="form"
+                                          action="<?php echo base_url() ?>ProfileController/editar"
                                           method="post">
                                         <div class="modal-body">
 
@@ -277,7 +288,9 @@
 
 
                                                 <div class="col-lg-10">
-                                                    <input name="nome" type="text" value="<?php echo $this->session->userdata('nome') ?>" class="form-control">
+                                                    <input name="nome" type="text"
+                                                           value="<?php echo $this->session->userdata('nome') ?>"
+                                                           class="form-control">
                                                 </div>
                                             </div>
                                             <br><br>

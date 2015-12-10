@@ -13,6 +13,7 @@ class ProfileController extends CI_Controller
 
         $this->load->database();// chama as configs do ../config/database.php
         $this->load->model('UpdateModel');// chama o modelo CadastrarModel
+        $this->load->helper(array('form'));
     }
 
     public function index()//para login normal
@@ -23,19 +24,20 @@ class ProfileController extends CI_Controller
 
     public function upload()
     {
-        $config['upload_path'] = './upload/';
-        $config['allowed_types'] = 'gif|jpg|png';
-        $config['max_size']	= '100';
-        $config['max_width']  = '1024';
-        $config['max_height']  = '768';
+        //Configurações necessárias para fazer upload do arquivo
 
-        $this->load->library('upload', $config);
 
-        if (  $this->upload->do_upload())
-        {
-            $data = array('upload_data' => $this->upload->data());
+        $config['upload_path'] = '../upload/';//Pasta onde será feito o upload
+        $config['allowed_types'] = 'gif|jpg|png';//Tipos suportados
+        $config['max_size'] = '1000000';//Configurando atributos do arquivo imagem que iremos receber
+        $config['max_width'] = '2000';
+        $config['max_height'] = '2000';
 
-            $this->load->view('upload_success', $data);
+        $this->load->library('upload', $config);//Carregando a lib com as configurações feitas
+
+
+        if (!$this->upload->do_upload('arquivo')) {//Fazendo o upload do arquivo
+            $data = array('arquivo_data' => $this->upload->data());
         }
 
     }
