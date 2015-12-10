@@ -27,7 +27,7 @@ class ProfileController extends CI_Controller
         //Configurações necessárias para fazer upload do arquivo
 
 
-        $config['upload_path'] = '../upload/';//Pasta onde será feito o upload
+        $config['upload_path'] = './upload/';//Pasta onde será feito o upload
         $config['allowed_types'] = 'gif|jpg|png';//Tipos suportados
         $config['max_size'] = '1000000';//Configurando atributos do arquivo imagem que iremos receber
         $config['max_width'] = '2000';
@@ -36,9 +36,11 @@ class ProfileController extends CI_Controller
         $this->load->library('upload', $config);//Carregando a lib com as configurações feitas
 
 
-        if (!$this->upload->do_upload('arquivo')) {//Fazendo o upload do arquivo
+        if (!$this->upload->do_upload('imagem')) {//Fazendo o upload do arquivo
             $data = array('arquivo_data' => $this->upload->data());
         }
+
+        $this->load->view('profile');
 
     }
 
@@ -50,6 +52,7 @@ class ProfileController extends CI_Controller
         $data['id'] = $this->session->userdata('id');//pega o id da session atual
 
         $this->UpdateModel->editar($data);
+        $this->session->set_userdata($data);
     }
 
     public function setDescricao()

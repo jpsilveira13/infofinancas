@@ -148,7 +148,7 @@
                                 <div id="inserirModal" class="note-image-dialog modal in" aria-hidden="false">
                                     <!-- modal para inserir imagens -->
 
-                                    <form name="upload" action="<?php echo base_url() ?>ProfileController/upload">
+                                    <?php echo form_open_multipart(base_url() . 'ProfileController/upload');?>
                                         <div class="modal-dialog">
                                             <div class="modal-content animated bounceInDown">
                                                 <div class="modal-header">
@@ -177,7 +177,6 @@
 
                                             </div>
                                         </div>
-                                    </form>
                                 </div>
                                 <!-- modal para inserir imagens -->
 
@@ -310,7 +309,7 @@
                                                 <label class="col-lg-2 control-label">Senha</label>
 
                                                 <div class="col-lg-10">
-                                                    <input name="senha" type="text"
+                                                    <input name="senha" type="password"
                                                            value="<?php echo $this->session->userdata('senha') ?>"
                                                            class="form-control">
                                                 </div>
@@ -355,8 +354,8 @@
                                 <label class="col-lg-2 control-label">Senha</label>
 
                                 <div class="col-lg-10">
-                                    <input id="senha" type="text"
-                                           placeholder="<?php echo $this->session->userdata('senha') ?>"
+                                    <input id="senha" type="password"
+                                           value="<?php echo $this->session->userdata('senha') ?>"
                                            class="form-control" disabled>
                                 </div>
                             </div>
