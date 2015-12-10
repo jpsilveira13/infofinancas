@@ -148,36 +148,22 @@
                                 <div id="inserirModal" class="note-image-dialog modal in" aria-hidden="false">
                                     <!-- modal para inserir imagens -->
 
-                                    <form name="upload" action="<?php echo base_url() ?>ProfileController/upload">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content animated bounceInDown">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal"><span
-                                                            aria-hidden="true">&times;</span><span
-                                                            class="sr-only">Cancelar</span></button>
-                                                    <h4>Perfil | Imagem</h4>
-                                                </div>
 
-                                                <div class="modal-body">
-                                                    <div class="row-fluid">
-                                                        <h5>Selecionar arquivo</h5>
-                                                        <input type="file" name="imagem" size="200"/>
-                                                        <br>
+                                    <div class="modal-dialog">
+                                        <div class="modal-content animated bounceInDown">
 
-                                                        <div class="modal-footer">
-                                                            <button class="btn btn-primary note-image-btn"
-                                                                    type="submit">
-                                                                Inserir Imagem
-                                                            </button>
-                                                        </div>
-                                                        </body>
-                                                        </html>
-                                                    </div>
-                                                </div>
+                                            <div class="modal-body">
+                                                <?php echo form_open_multipart('ProfileController/upload'); ?>
+                                                <input type="file" name="arquivo" id="arquivo" size="200" />
+                                                <br>
+                                                <input type="submit" value="Enviar" />
 
+
+                                                </form>
                                             </div>
+
                                         </div>
-                                    </form>
+                                    </div>
                                 </div>
                                 <!-- modal para inserir imagens -->
 
@@ -428,17 +414,7 @@
 
         }, 1300);
 
-        $('.summernote').summernote();
-
     });
-    var edit = function () {
-        $('.click2edit').summernote({focus: true});
-    };
-    var save = function () {
-        var aHTML = $('.click2edit').code(); //save HTML If you need(aHTML: array).
-        $('.click2edit').destroy();
-
-    };
 
 
 </script>

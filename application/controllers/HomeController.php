@@ -20,11 +20,21 @@ class HomeController extends CI_Controller
     {
         if ($this->session->userdata('id')) {
             $data['movimentacoes'] = $this->MovimentacaoModel->getMovimentacoes($this->session->userdata('id'));
-            $data['response'] = json_encode(['status' => 'SUCCESS', 'title' => 'Bem vindo ao Dynado', 'message' => 'Controle de Finanças']);
+            $data['response'] = json_encode([
+                'status' => 'SUCCESS',
+                'title' => 'Bem vindo ao Dynado',
+                'message' => 'Controle de Finanças',
+                'movimentacoes' => $this->MovimentacaoModel->getMovimentacoes($this->session->userdata('id'))
+            ]);
 
             $this->load->view('home', $data);
         } else {
-            $data['response'] = json_encode(['status' => 'SUCCESS', 'title' => 'Bem vindo ao Dynado', 'message' => 'Controle de Finanças']);
+            $data['response'] = json_encode([
+                'status' => 'SUCCESS',
+                'title' => 'Bem vindo ao Dynado',
+                'message' => 'Controle de Finanças',
+                'movimentacoes' => $this->MovimentacaoModel->getMovimentacoes($this->session->userdata('id'))
+            ]);
             $this->load->view('login', $data);
         }
     }
@@ -38,7 +48,12 @@ class HomeController extends CI_Controller
         if ($usuario) {
             $this->session->set_userdata($usuario);//cria a session
             $data['movimentacoes'] = $this->MovimentacaoModel->getMovimentacoes($this->session->userdata('id'));
-            $data['response'] = json_encode(['status' => 'SUCCESS', 'title' => 'Bem vindo ao Dynado', 'message' => 'Controle de Finanças']);
+            $data['response'] = json_encode([
+                'status' => 'SUCCESS',
+                'title' => 'Bem vindo ao Dynado',
+                'message' => 'Controle de Finanças',
+                'movimentacoes' => $this->MovimentacaoModel->getMovimentacoes($this->session->userdata('id'))
+            ]);
             $this->load->view('home', $data);//chama a tela inicial
             //var_dump($this->session->userdata('id'));
         } else {

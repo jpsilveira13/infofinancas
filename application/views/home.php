@@ -79,7 +79,7 @@
     </nav>
 
     <!-- Dashboard -->
-    <div id="page-wrapper" class="gray-bg" Style="min-height: 100px">
+    <div id="page-wrapper" class="gray-bg" Style="min-height: 1000px">
 
         <!-- Menu Topo -->
         <div class="row border-bottom white-bg">
@@ -345,12 +345,13 @@
 
 <div id="idDiv" style="display:none"><?php echo $response;?></div>
 
+
 <script>
 
     $(document).ready(function () {
         var $response = JSON.parse($('#idDiv').html());
-        //para ver os dados e testar se deu certo use o console.log:
-        console.log($response);
+
+        //console.log($($response));
 
         $('#data_1 .input-group.date').datepicker({
             todayBtn: "linked",
@@ -378,6 +379,30 @@
 
         }, 1300);
 
+        var $Ddatasets = [];
+        var $Edatasets = [];
+
+        for(var $cont = 0; $cont < 12; $cont++){
+            $Ddatasets[$cont] = 0;
+            $Edatasets[$cont] = 0;
+        }
+
+        $.each($response.movimentacoes, function(key, value) {
+            var data = value.vencimento.split("-");
+            var data2 = data[1].split("0");
+
+            console.log(value.valor);
+            if(value.tipo == "DESPESA"){
+                $Ddatasets[data2[1]] = parseFloat($Ddatasets[data2[1]]) + parseFloat(value.valor);
+            } else {
+                $Edatasets[data2[1]] = parseFloat($Edatasets[data2[1]]) + parseFloat(value.valor);
+            }
+        });
+
+        console.log($Ddatasets);
+        console.log($Edatasets);
+
+
 
         var lineData = {
             labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
@@ -390,7 +415,7 @@
                     pointStrokeColor: "#fff",
                     pointHighlightFill: "#fff",
                     pointHighlightStroke: "rgba(220,220,220,1)",
-                    data: [27, 90, 28, 48, 40, 19, 40, 19, 86, 27, 19, 86]
+                    data: $Ddatasets
                 },
                 {
                     label: "Example dataset",
@@ -400,7 +425,7 @@
                     pointStrokeColor: "#fff",
                     pointHighlightFill: "#fff",
                     pointHighlightStroke: "rgba(26,179,148,1)",
-                    data: [28, 48, 40, 19, 86, 27, 90, 28, 48, 40, 19, 86]
+                    data: $Edatasets
                 }
             ]
         };

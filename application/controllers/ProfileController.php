@@ -18,7 +18,12 @@ class ProfileController extends CI_Controller
 
     public function index()//para login normal
     {
-        $this->load->view('profile');//chama a tela do perfil
+        $data['response'] = json_encode([
+            'status' => 'SUCCESS',
+            'title' => 'Bem vindo ao Dynado',
+            'message' => 'Controle de Finanças'
+        ]);
+        $this->load->view('profile', $data);//chama a tela do perfil
 
     }
 
@@ -26,8 +31,9 @@ class ProfileController extends CI_Controller
     {
         //Configurações necessárias para fazer upload do arquivo
 
+        //die(print_r($_GET['arquivo']));
 
-        $config['upload_path'] = '../upload/';//Pasta onde será feito o upload
+        $config['upload_path'] = './upload/';//Pasta onde será feito o upload
         $config['allowed_types'] = 'gif|jpg|png';//Tipos suportados
         $config['max_size'] = '1000000';//Configurando atributos do arquivo imagem que iremos receber
         $config['max_width'] = '2000';
@@ -35,11 +41,9 @@ class ProfileController extends CI_Controller
 
         $this->load->library('upload', $config);//Carregando a lib com as configurações feitas
 
+        $this->upload->do_upload('arquivo');
 
-        if (!$this->upload->do_upload('arquivo')) {//Fazendo o upload do arquivo
-            $data = array('arquivo_data' => $this->upload->data());
-        }
-
+        die(print_r($this->upload->display_errors()));
     }
 
     public function editar()

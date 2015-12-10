@@ -79,7 +79,7 @@
     </nav>
 
     <!-- Dashboard -->
-    <div id="page-wrapper" class="gray-bg" Style="min-height: 800px">
+    <div id="page-wrapper" class="gray-bg" Style="min-height: 1000px">
 
         <!-- Menu Topo -->
         <div class="row border-bottom white-bg">
