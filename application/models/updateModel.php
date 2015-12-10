@@ -5,6 +5,7 @@ class UpdateModel extends CI_Model
     public $nome;
     public $email;
     public $senha;
+    public $descricao;
 
     public function __construct()
     {
@@ -19,8 +20,11 @@ class UpdateModel extends CI_Model
         $this->load->view('profile');
     }
 
-    public function setDescrição()
+    public function setDescricao($data)
     {
-        $data['descricao'] = $_POST['descricao'];//recebe a descrição digitada
+        $this->db->where('id', $data['id']);
+        $this->db->update('usuario', $data);
+
+        $this->load->view('profile');
     }
 }

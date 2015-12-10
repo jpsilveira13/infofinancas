@@ -49,4 +49,12 @@ class ProfileController extends CI_Controller
 
         $this->UpdateModel->editar($data);
     }
+
+    public function setDescricao()
+    {
+        $data['id'] = $this->session->userdata('id');//pega o id da session atual
+        $data['descricao'] = $_POST['descricao'];//recebe a descrição digitada
+
+        $this->UpdateModel->setDescricao($data);
+    }
 }

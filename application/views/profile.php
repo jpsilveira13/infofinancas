@@ -140,7 +140,7 @@
 
                                 <button type="button" class="no-borders no-margins no-padding" data-toggle="modal"
                                         data-target="#inserirModal">
-                                    <img alt="image" class="img-responsive img-preview"
+                                    <img alt="image" class="img-responsive img-preview "
                                          src="<?php echo base_url() ?>/assets/img/icon-user-default.jpg">
                                     <!-- imagem de perfil -->
                                 </button>
@@ -177,38 +177,72 @@
                                 </div>
                                 <!-- modal para inserir imagens -->
 
-                            </div>
+                                <div >
+                                    <div class="ibox float-e-margins">
+                                        <div>
 
-                            <div class="ibox-content profile-content">     <!-- parte das informações -->
-                                <h4><strong><?php echo $this->session->userdata('nome') ?></strong></h4>
-
-                                <div class="ibox float-e-margins">    <!--caixa da descrição editável -->
-                                    <div class="ibox-title">
-                                        <h5>Descrição</h5>
-                                        <button id="edit" class="btn btn-primary btn-xs m-l-sm" onclick="edit()"
-                                                type="button">
-                                            Editar
-                                        </button>
-                                        <button id="save" class="btn btn-primary  btn-xs" onclick="save()"
-                                                type="button">
-                                            Salvar
-                                        </button>
-
-                                    </div>
-                                    <div class="ibox-content no-paddings">
-
-                                        <div id="descricao"
-                                             class="click2edit wrapper p-md table-bordered border-bottom">
-
+                                            <div class="ibox-tools">
+                                                <button type="button" class="btn btn-primary btn-xs m-l-sm " data-toggle="modal"
+                                                        data-target="#editarDescricaoModal">
+                                                    Editar
+                                                </button>
+                                            </div>
                                         </div>
 
+                                        <div id="editarDescricaoModal" class="modal inmodal" aria-hidden="false">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content animated bounceInDown">
+                                                    <div class="modal-header">
+
+                                                        <i class="fa fa-edit modal-icon"></i>
+
+                                                    </div>
+                                                    <form class="m-t" role="form" action="<?php echo base_url() ?>ProfileController/setDescricao"
+                                                          method="post">
+                                                        <div class="modal-body">
+
+
+                                                            <div class="form-group">
+                                                                <label class="col-lg-2 control-label">Descrição</label>
+
+
+                                                                <div class="col-lg-10">
+                                                                    <input name="descricao" type="text" value="<?php echo $this->session->userdata('descricao') ?>" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <br><br>
+
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-white" data-dismiss="modal">Cancelar
+                                                            </button>
+                                                            <button type="submit" class="btn btn-primary">Salvar</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div> <!-- Modal para alterar as informações -->
+
+                                        <div class="ibox-content">
+                                            <div class="form-group"> <!-- mostrar as informações -->
+                                                <label class="col-lg-2 control-label">Descrição</label>
+                                                <br><br>
+
+                                                <div class="col-lg-15 ">
+                                                    <input id="nome" type="text"
+                                                           value="<?php echo $this->session->userdata('descricao') ?>"
+                                                           class="form-control" disabled>
+                                                </div>
+                                            </div>
+                                            <br><br>
+
+                                        </div> <!-- info da pagina -->
                                     </div>
 
                                 </div>
-                                <!--caixa da descrição editável -->
 
                             </div>
-                            <!-- parte das informações -->
+
                         </div>
                     </div>
                 </div>
@@ -217,10 +251,12 @@
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
                             <h5>Dados</h5>
+                            <div class="ibox-tools">
                             <button type="button" class="btn btn-primary btn-xs m-l-sm " data-toggle="modal"
                                     data-target="#editarModal">
                                 Editar
                             </button>
+                            </div>
                         </div>
 
                         <div id="editarModal" class="modal inmodal" aria-hidden="false">
