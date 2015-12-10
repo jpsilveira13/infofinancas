@@ -61,6 +61,7 @@ class MovimentacaoController extends CI_Controller
 
         $this->MovimentacaoModel->create($data);
 
-        $this->load->view('home');
+        $data['movimentacoes'] = $this->MovimentacaoModel->getMovimentacoes();
+        $this->load->view('home', $data);
     }
 }

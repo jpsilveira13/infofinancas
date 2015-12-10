@@ -19,7 +19,7 @@ class MovimentacaoModel extends CI_Model
 
     public function getMovimentacoes()
     {
-
+        return $this->db->get("movimentacao")->result();
     }
 
     public function create($data)

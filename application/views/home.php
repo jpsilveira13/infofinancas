@@ -126,41 +126,26 @@
 
                         <div class="ibox-content no-padding">
                             <ul class="list-group">
-                                <li class="list-group-item">
-                                    <p>
-                                        <strong>Cartão de Crédito</strong>
-                                        <span class="label label-danger pull-right"> R$ 250,00</span>
-                                    </p>
-                                    <small class="block text-muted"><i class="fa fa-clock-o"></i> 08/12/2015</small>
-                                </li>
-                                <li class="list-group-item">
-                                    <p>
-                                        <strong>Cartão de Crédito</strong>
-                                        <span class="label label-danger pull-right"> R$ 250,00</span>
-                                    </p>
-                                    <small class="block text-muted"><i class="fa fa-clock-o"></i> 09/12/2015</small>
-                                </li>
-                                <li class="list-group-item">
-                                    <p>
-                                        <strong>Cartão de Crédito</strong>
-                                        <span class="label label-danger pull-right"> R$ 250,00</span>
-                                    </p>
-                                    <small class="block text-muted"><i class="fa fa-clock-o"></i> 10/12/2015</small>
-                                </li>
-                                <li class="list-group-item">
-                                    <p>
-                                        <strong>Cartão de Crédito</strong>
-                                        <span class="label label-warning-light pull-right"> R$ 250,00</span>
-                                    </p>
-                                    <small class="block text-muted"><i class="fa fa-clock-o"></i> 13/12/2015</small>
-                                </li>
-                                <li class="list-group-item">
-                                    <p>
-                                        <strong>Cartão de Crédito</strong>
-                                        <span class="label label-warning-light pull-right"> R$ 250,00</span>
-                                    </p>
-                                    <small class="block text-muted"><i class="fa fa-clock-o"></i> 15/12/2015</small>
-                                </li>
+
+                                <?php
+                                $count = 0;
+                                foreach ($movimentacoes as $i => $movimentacao) {
+                                    if ($movimentacao->tipo == 'DESPESA' && $count < 5) {
+                                        echo
+                                            '
+                                            <li class="list-group-item">
+                                                <p>
+                                                    <strong>' . $movimentacao->nome . '</strong>
+                                                    <span class="label label-danger pull-right"> R$' . $movimentacao->valor . '</span>
+                                                </p>
+                                                <small class="block text-muted"><i class="fa fa-clock-o"></i>' . $movimentacao->vencimento . '</small>
+                                            </li>
+                                            ';
+                                        $count++;
+                                    }
+                                }
+                                ?>
+
                             </ul>
                         </div>
 
@@ -188,7 +173,8 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <form action="<?php echo base_url() ?>MovimentacaoController">
-                                        <input type="submit" value="Nova Movimentação" class="form-control btn btn-w-m btn-primary">
+                                        <input type="submit" value="Nova Movimentação"
+                                               class="form-control btn btn-w-m btn-primary">
                                     </form>
                                 </div>
                             </div>
@@ -208,41 +194,24 @@
 
                         <div class="ibox-content no-padding">
                             <ul class="list-group">
-                                <li class="list-group-item">
-                                    <p>
-                                        <strong>Salário</strong>
-                                        <span class="label label-info pull-right"> R$ 250,00</span>
-                                    </p>
-                                    <small class="block text-muted"><i class="fa fa-clock-o"></i> 01/01/2016</small>
-                                </li>
-                                <li class="list-group-item">
-                                    <p>
-                                        <strong>Salário</strong>
-                                        <span class="label label-info pull-right"> R$ 250,00</span>
-                                    </p>
-                                    <small class="block text-muted"><i class="fa fa-clock-o"></i> 01/02/2016</small>
-                                </li>
-                                <li class="list-group-item">
-                                    <p>
-                                        <strong>Salário</strong>
-                                        <span class="label label-info pull-right"> R$ 250,00</span>
-                                    </p>
-                                    <small class="block text-muted"><i class="fa fa-clock-o"></i> 01/03/2016</small>
-                                </li>
-                                <li class="list-group-item">
-                                    <p>
-                                        <strong>Salário</strong>
-                                        <span class="label label-info pull-right"> R$ 250,00</span>
-                                    </p>
-                                    <small class="block text-muted"><i class="fa fa-clock-o"></i> 01/04/2016</small>
-                                </li>
-                                <li class="list-group-item">
-                                    <p>
-                                        <strong>Salário</strong>
-                                        <span class="label label-info pull-right"> R$ 250,00</span>
-                                    </p>
-                                    <small class="block text-muted"><i class="fa fa-clock-o"></i> 01/05/2016</small>
-                                </li>
+                                <?php
+                                $count = 0;
+                                foreach ($movimentacoes as $movimentacao) {
+                                    if ($movimentacao->tipo == 'ENTRADA' && $count < 5) {
+                                        echo
+                                            '
+                                            <li class="list-group-item">
+                                                <p>
+                                                    <strong>' . $movimentacao->nome . '</strong>
+                                                    <span class="label label-info pull-right"> R$' . $movimentacao->valor . '</span>
+                                                </p>
+                                                <small class="block text-muted"><i class="fa fa-clock-o"></i>' . $movimentacao->vencimento . '</small>
+                                            </li>
+                                            ';
+                                        $count++;
+                                    }
+                                }
+                                ?>
                             </ul>
                         </div>
 
@@ -271,59 +240,49 @@
                                     <th>Descrição</th>
                                     <th>Valor</th>
                                     <th>Vencimento</th>
+                                    <th>Ações</th>
                                 </tr>
                                 </thead>
 
                                 <tbody>
-                                <tr>
-                                    <td><span class="label label-info">ENTRADA</span></td>
-                                    <td>Salário</td>
-                                    <td>salário que se recebe todo mês.</td>
-                                    <td>R$ 2000,00</td>
-                                    <td>10/12/2015</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="label label-danger">DESPESA</span></td>
-                                    <td>Cartão de Crédito 1</td>
-                                    <td>conta do cartão de crédito que vence todo mês.</td>
-                                    <td>R$ 2000,00</td>
-                                    <td>10/12/2015</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="label label-danger">DESPESA</span></td>
-                                    <td>Cartão de Crédito 1</td>
-                                    <td>conta do cartão de crédito que vence todo mês.</td>
-                                    <td>R$ 2000,00</td>
-                                    <td>10/12/2015</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="label label-danger">DESPESA</span></td>
-                                    <td>Cartão de Crédito 1</td>
-                                    <td>conta do cartão de crédito que vence todo mês.</td>
-                                    <td>R$ 2000,00</td>
-                                    <td>10/12/2015</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="label label-danger">DESPESA</span></td>
-                                    <td>Cartão de Crédito 1</td>
-                                    <td>conta do cartão de crédito que vence todo mês.</td>
-                                    <td>R$ 2000,00</td>
-                                    <td>10/12/2015</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="label label-danger">DESPESA</span></td>
-                                    <td>Cartão de Crédito 1</td>
-                                    <td>conta do cartão de crédito que vence todo mês.</td>
-                                    <td>R$ 2000,00</td>
-                                    <td>10/12/2015</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="label label-danger">DESPESA</span></td>
-                                    <td>Cartão de Crédito 1</td>
-                                    <td>conta do cartão de crédito que vence todo mês.</td>
-                                    <td>R$ 2000,00</td>
-                                    <td>10/12/2015</td>
-                                </tr>
+
+                                <?php
+                                $count = 0;
+                                foreach ($movimentacoes as $movimentacao) {
+                                    if($movimentacao->tipo == 'DESPESA'){
+                                        $tipo = "danger";
+                                    } else {
+                                        $tipo = "info";
+                                    }
+                                    echo
+                                        '
+                                        <tr>
+                                            <td><span class="label label-' . $tipo . '">' . $movimentacao->tipo . '</span></td>
+                                            <td>' . $movimentacao->nome . '</td>
+                                            <td>' . $movimentacao->descricao . '</td>
+                                            <td>R$ ' . $movimentacao->valor . '</td>
+                                            <td>' . $movimentacao->vencimento . '</td>
+                                            <td width="130px">
+                                                <div class="form-group">
+                                                    <div class="col-lg-6">
+                                                        <form action="<?php echo base_url() ?>MovimentacaoController">
+                                                            <input type="hidden" name="id" value="' . $movimentacao->id . '">
+                                                            <input type="submit" value="Editar" class="btn btn-white btn-sm">
+                                                        </form>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <form action="<?php echo base_url() ?>MovimentacaoController">
+                                                            <input type="hidden" name="id" value="' . $movimentacao->id . '">
+                                                            <input type="submit" value="Excluir" class="btn btn-white btn-sm">
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        ';
+                                }
+                                ?>
+
                                 </tbody>
 
                             </table>
