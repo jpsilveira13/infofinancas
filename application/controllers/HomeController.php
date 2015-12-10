@@ -20,9 +20,12 @@ class HomeController extends CI_Controller
     {
         if ($this->session->userdata('id')) {
             $data['movimentacoes'] = $this->MovimentacaoModel->getMovimentacoes($this->session->userdata('id'));
+            $data['response'] = json_encode(['status' => 'SUCCESS', 'title' => 'Bem vindo ao Dynado', 'message' => 'Controle de Finanças']);
+
             $this->load->view('home', $data);
         } else {
-            $this->load->view('login');
+            $data['response'] = json_encode(['status' => 'SUCCESS', 'title' => 'Bem vindo ao Dynado', 'message' => 'Controle de Finanças']);
+            $this->load->view('login', $data);
         }
     }
 
@@ -34,17 +37,21 @@ class HomeController extends CI_Controller
 
         if ($usuario) {
             $this->session->set_userdata($usuario);//cria a session
-            $this->load->view('home');//chama a tela inicial
+            $data['movimentacoes'] = $this->MovimentacaoModel->getMovimentacoes($this->session->userdata('id'));
+            $data['response'] = json_encode(['status' => 'SUCCESS', 'title' => 'Bem vindo ao Dynado', 'message' => 'Controle de Finanças']);
+            $this->load->view('home', $data);//chama a tela inicial
             //var_dump($this->session->userdata('id'));
         } else {
-            $this->load->view('login');
+            $data['response'] = json_encode(['status' => 'ERROR', 'title' => 'Error', 'message' => 'Falha ao realizar login']);
+            $this->load->view('login', $data);
         }
     }
 
     public function logout()
     {
         $this->session->sess_destroy();
-        $this->load->view('login');
+        $data['response'] = json_encode(['status' => 'SUCCESS', 'title' => 'Sucesso', 'message' => 'Desconectado com sucesso']);
+        $this->load->view('login', $data);
     }
 
     public function criarConta()//para criar uma nova conta
@@ -55,7 +62,8 @@ class HomeController extends CI_Controller
 
         $this->CadastrarModel->inserir($data);//chama a função inserir e passa os dados como parametros
 
-        $this->load->view('login');//carrega a view home
+        $data['response'] = json_encode(['status' => 'SUCCESS', 'title' => 'Sucesso', 'message' => 'Conta criada com sucesso']);
+        $this->load->view('login', $data);//carrega a view home
     }
 
     public function buscarDados()
@@ -66,6 +74,7 @@ class HomeController extends CI_Controller
 
     public function registrar()
     {
-        $this->load->view('register');
+        $data['response'] = json_encode(['status' => 'SUCCESS', 'title' => 'Sucesso', 'message' => 'Crie sua conta']);
+        $this->load->view('register', $data);
     }
 }

@@ -35,6 +35,6 @@ class MovimentacaoModel extends CI_Model
 
     public function destroy($id)
     {
-
+        $this->db->delete('movimentacao', array('id' => $id));
     }
 }

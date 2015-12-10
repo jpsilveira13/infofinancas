@@ -16,6 +16,15 @@
     <link href="<?php echo base_url() ?>/assets/css/plugins/summernote/summernote.css" rel="stylesheet">
     <link href="<?php echo base_url() ?>/assets/css/plugins/summernote/summernote-bs3.css" rel="stylesheet">
 
+    <!-- Toastr style -->
+    <link href="<?php echo base_url() ?>/assets/css/plugins/toastr/toastr.min.css" rel="stylesheet">
+
+    <!-- Gritter -->
+    <link href="<?php echo base_url() ?>/assets/js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+
+    <!-- DataPicker -->
+    <link href="<?php echo base_url() ?>/assets/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -46,7 +55,7 @@
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
                             <li><a href="<?php echo base_url() ?>ProfileController">Perfil</a></li>
                             <li class="divider"></li>
-                            <li><a href="<?php echo base_url() ?>">Sair</a></li>
+                            <li><a href="<?php echo base_url() ?>HomeController/logout">Sair</a></li>
                         </ul>
 
                     </div>
@@ -92,7 +101,7 @@
 
                     <!-- Sair -->
                     <li>
-                        <a href="<?php echo base_url() ?>">
+                        <a href="<?php echo base_url() ?>HomeController/logout">
                             <i class="fa fa-sign-out"></i> Sair
                         </a>
                     </li>
@@ -463,8 +472,31 @@
 <!-- SUMMERNOTE -->
 <script src="<?php echo base_url() ?>/assets/js/plugins/summernote/summernote.min.js"></script>
 
+<div id="idDiv" style="display:none"><?php echo $response;?></div>
+
 <script>
     $(document).ready(function () {
+        var $response = JSON.parse($('#idDiv').html());
+        //para ver os dados e testar se deu certo use o console.log:
+        console.log($response);
+
+        setTimeout(function () {
+            toastr.options = {
+                closeButton: true,
+                progressBar: true,
+                showMethod: 'slideDown',
+                timeOut: 5000
+            };
+
+            if($response.status == 'SUCCESS'){
+                toastr.success($response.message, $response.title);
+            }
+
+            if($response.status == 'ERROR'){
+                toastr.error($response.message, $response.title);
+            }
+
+        }, 1300);
 
         $('.summernote').summernote();
 

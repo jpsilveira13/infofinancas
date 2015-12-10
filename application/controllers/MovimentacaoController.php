@@ -34,12 +34,11 @@ class MovimentacaoController extends CI_Controller
 
         //$this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 
-        if ($this->form_validation->run() == FALSE)
-        {
+        if ($this->form_validation->run() == FALSE) {
+            //$data['response'] = json_encode(['status' => 'ERROR', 'title' => 'Error', 'message' => 'Falha ao enviar seu formulário.']);
+            //$this->load->view('formMovimentacao', $data);
             $this->load->view('formMovimentacao');
-        }
-        else
-        {
+        } else {
             $this->store();
         }
     }
@@ -54,14 +53,24 @@ class MovimentacaoController extends CI_Controller
             'descricao' => $_POST['descricao'],
             'tipo' => $_POST['tipo'],
             'valor' => $_POST['valor'],
-            'vencimento' =>$dataEN,
+            'vencimento' => $dataEN,
             'frequencia' => $_POST['frequencia'],
             'parcelas' => $_POST['parcelas']
         ];
 
         $this->MovimentacaoModel->create($data);
 
-        $data['movimentacoes'] = $this->MovimentacaoModel->getMovimentacoes();
+        $data['movimentacoes'] = $this->MovimentacaoModel->getMovimentacoes($this->session->userdata('id'));
+        $data['response'] = json_encode(['status' => 'SUCCESS', 'title' => 'Sucesso', 'message' => 'Movimentação cadastrado com sucesso']);
+        $this->load->view('formMovimentacao', $data);
+    }
+
+    public function delete()
+    {
+        $this->MovimentacaoModel->destroy($_POST['id']);
+
+        $data['movimentacoes'] = $this->MovimentacaoModel->getMovimentacoes($this->session->userdata('id'));
+        $data['response'] = json_encode(['status' => 'SUCCESS', 'title' => 'Sucesso', 'message' => 'Movimentação deletada com sucesso']);
         $this->load->view('home', $data);
     }
 }

@@ -262,16 +262,10 @@
                                             <td>' . $movimentacao->descricao . '</td>
                                             <td>R$ ' . $movimentacao->valor . '</td>
                                             <td>' . $movimentacao->vencimento . '</td>
-                                            <td width="130px">
+                                            <td width="10px">
                                                 <div class="form-group">
                                                     <div class="col-lg-6">
-                                                        <form action="<?php echo base_url() ?>MovimentacaoController">
-                                                            <input type="hidden" name="id" value="' . $movimentacao->id . '">
-                                                            <input type="submit" value="Editar" class="btn btn-white btn-sm">
-                                                        </form>
-                                                    </div>
-                                                    <div class="col-lg-6">
-                                                        <form action="<?php echo base_url() ?>MovimentacaoController">
+                                                        <form action="' . base_url() . 'MovimentacaoController/delete" method="POST">
                                                             <input type="hidden" name="id" value="' . $movimentacao->id . '">
                                                             <input type="submit" value="Excluir" class="btn btn-white btn-sm">
                                                         </form>
@@ -349,9 +343,15 @@
 <!-- DataPicker -->
 <script src="<?php echo base_url() ?>/assets/js/plugins/datapicker/bootstrap-datepicker.js"></script>
 
+<div id="idDiv" style="display:none"><?php echo $response;?></div>
+
 <script>
 
     $(document).ready(function () {
+        var $response = JSON.parse($('#idDiv').html());
+        //para ver os dados e testar se deu certo use o console.log:
+        console.log($response);
+
         $('#data_1 .input-group.date').datepicker({
             todayBtn: "linked",
             keyboardNavigation: false,
@@ -367,7 +367,14 @@
                 showMethod: 'slideDown',
                 timeOut: 5000
             };
-            toastr.success('Controle de Finanças', 'Bem vindo ao Dynado');
+
+            if($response.status == 'SUCCESS'){
+                toastr.success($response.message, $response.title);
+            }
+
+            if($response.status == 'ERROR'){
+                toastr.error($response.message, $response.title);
+            }
 
         }, 1300);
 

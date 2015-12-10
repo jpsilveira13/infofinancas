@@ -288,9 +288,15 @@
 <!-- DataPicker -->
 <script src="<?php echo base_url() ?>/assets/js/plugins/datapicker/bootstrap-datepicker.js"></script>
 
+<div id="idDiv" style="display:none"><?php echo $response;?></div>
+
 <script>
 
     $(document).ready(function () {
+        var $response = JSON.parse($('#idDiv').html());
+        //para ver os dados e testar se deu certo use o console.log:
+        console.log($response);
+
         $('#vencimento').datepicker({
             todayBtn: "linked",
             keyboardNavigation: false,
@@ -306,7 +312,14 @@
                 showMethod: 'slideDown',
                 timeOut: 5000
             };
-            toastr.success('Controle de Finanças', 'Bem vindo ao Dynado');
+
+            if($response.status == 'SUCCESS'){
+                toastr.success($response.message, $response.title);
+            }
+
+            if($response.status == 'ERROR'){
+                toastr.error($response.message, $response.title);
+            }
 
         }, 1300);
     });
