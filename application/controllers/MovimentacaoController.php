@@ -70,7 +70,13 @@ class MovimentacaoController extends CI_Controller
         $this->MovimentacaoModel->destroy($_POST['id']);
 
         $data['movimentacoes'] = $this->MovimentacaoModel->getMovimentacoes($this->session->userdata('id'));
-        $data['response'] = json_encode(['status' => 'SUCCESS', 'title' => 'Sucesso', 'message' => 'Movimentação deletada com sucesso']);
+        $data['response'] = json_encode([
+            'status' => 'SUCCESS',
+            'title' => 'Sucesso',
+            'message' => 'Movimentação deletada com sucesso',
+            'movimentacoes' => $this->MovimentacaoModel->getMovimentacoes($this->session->userdata('id'))
+        ]);
+
         $this->load->view('home', $data);
     }
 }

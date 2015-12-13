@@ -55,7 +55,6 @@ class HomeController extends CI_Controller
                 'movimentacoes' => $this->MovimentacaoModel->getMovimentacoes($this->session->userdata('id'))
             ]);
             $this->load->view('home', $data);//chama a tela inicial
-            //var_dump($this->session->userdata('id'));
         } else {
             $data['response'] = json_encode(['status' => 'ERROR', 'title' => 'Error', 'message' => 'Falha ao realizar login']);
             $this->load->view('login', $data);
@@ -79,12 +78,6 @@ class HomeController extends CI_Controller
 
         $data['response'] = json_encode(['status' => 'SUCCESS', 'title' => 'Sucesso', 'message' => 'Conta criada com sucesso']);
         $this->load->view('login', $data);//carrega a view home
-    }
-
-    public function buscarDados()
-    {
-        $dados = [10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65];
-        return $dados;
     }
 
     public function registrar()

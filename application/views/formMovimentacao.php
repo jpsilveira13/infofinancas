@@ -228,6 +228,8 @@
 
                         </div>
 
+                        <div class="ibox-content"></div>
+
                     </div>
                 </div>
             </div>

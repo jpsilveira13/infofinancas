@@ -114,6 +114,7 @@
 
         <!-- Dashboard -->
         <div class="wrapper wrapper-content">
+
             <div class="row">
 
                 <!-- Despesas -->
@@ -133,21 +134,33 @@
                                     if ($movimentacao->tipo == 'DESPESA' && $count < 5) {
                                         echo
                                             '
-                                            <li class="list-group-item">
-                                                <p>
-                                                    <strong>' . $movimentacao->nome . '</strong>
-                                                    <span class="label label-danger pull-right"> R$' . $movimentacao->valor . '</span>
-                                                </p>
-                                                <small class="block text-muted"><i class="fa fa-clock-o"></i>' . $movimentacao->vencimento . '</small>
-                                            </li>
-                                            ';
+                                                <li class="list-group-item">
+                                                    <p>
+                                                        <strong>' . $movimentacao->nome . '</strong>
+                                                        <span class="label label-danger pull-right"> R$' . $movimentacao->valor . '</span>
+                                                    </p>
+                                                    <small class="block text-muted"><i class="fa fa-clock-o"></i>' . $movimentacao->vencimento . '</small>
+                                                </li>
+                                                ';
                                         $count++;
                                     }
+                                }
+                                if ($count == 0) {
+                                    echo
+                                    '
+                                    <li class="list-group-item">
+                                        <p>
+                                            Nenhuma despesa encontrada
+                                        </p>
+                                    </li>
+                                    ';
                                 }
                                 ?>
 
                             </ul>
                         </div>
+
+                        <div class="ibox-content"></div>
 
                     </div>
                 </div>
@@ -181,6 +194,8 @@
 
                         </div>
 
+                        <div class="ibox-content"></div>
+
                     </div>
                 </div>
 
@@ -211,9 +226,21 @@
                                         $count++;
                                     }
                                 }
+                                if ($count == 0) {
+                                    echo
+                                    '
+                                    <li class="list-group-item">
+                                        <p>
+                                            Nenhuma entrada encontrada
+                                        </p>
+                                    </li>
+                                    ';
+                                }
                                 ?>
                             </ul>
                         </div>
+
+                        <div class="ibox-content"></div>
 
                     </div>
                 </div>
@@ -249,7 +276,7 @@
                                 <?php
                                 $count = 0;
                                 foreach ($movimentacoes as $movimentacao) {
-                                    if($movimentacao->tipo == 'DESPESA'){
+                                    if ($movimentacao->tipo == 'DESPESA') {
                                         $tipo = "danger";
                                     } else {
                                         $tipo = "info";
@@ -274,6 +301,17 @@
                                             </td>
                                         </tr>
                                         ';
+                                    $count++;
+                                }
+                                if ($count == 0) {
+                                    echo
+                                    '
+                                    <tr>
+                                        <td class="text-center" colspan="6">
+                                            Nenhuma movimentação encontrada
+                                        </td>
+                                    </tr>
+                                    ';
                                 }
                                 ?>
 
@@ -283,9 +321,12 @@
 
                         </div>
 
+                        <div class="ibox-content"></div>
+
                     </div>
                 </div>
             </div>
+
         </div>
 
         <div class="footer">
@@ -343,7 +384,7 @@
 <!-- DataPicker -->
 <script src="<?php echo base_url() ?>/assets/js/plugins/datapicker/bootstrap-datepicker.js"></script>
 
-<div id="idDiv" style="display:none"><?php echo $response;?></div>
+<div id="idDiv" style="display:none"><?php echo $response; ?></div>
 
 
 <script>
@@ -369,11 +410,11 @@
                 timeOut: 5000
             };
 
-            if($response.status == 'SUCCESS'){
+            if ($response.status == 'SUCCESS') {
                 toastr.success($response.message, $response.title);
             }
 
-            if($response.status == 'ERROR'){
+            if ($response.status == 'ERROR') {
                 toastr.error($response.message, $response.title);
             }
 
@@ -382,26 +423,23 @@
         var $Ddatasets = [];
         var $Edatasets = [];
 
-        for(var $cont = 0; $cont < 12; $cont++){
+        for (var $cont = 0; $cont < 12; $cont++) {
             $Ddatasets[$cont] = 0;
             $Edatasets[$cont] = 0;
         }
 
-        $.each($response.movimentacoes, function(key, value) {
+        $.each($response.movimentacoes, function (key, value) {
             var data = value.vencimento.split("-");
-            var data2 = data[1].split("0");
 
-            console.log(value.valor);
-            if(value.tipo == "DESPESA"){
-                $Ddatasets[data2[1]] = parseFloat($Ddatasets[data2[1]]) + parseFloat(value.valor);
+            if (value.tipo == "DESPESA") {
+                $Ddatasets[parseInt(data[1]) - 1] = parseFloat($Ddatasets[parseInt(data[1] - 1)]) + parseFloat(value.valor);
             } else {
-                $Edatasets[data2[1]] = parseFloat($Edatasets[data2[1]]) + parseFloat(value.valor);
+                $Edatasets[parseInt(data[1]) - 1] = parseFloat($Edatasets[parseInt(data[1] - 1)]) + parseFloat(value.valor);
             }
         });
 
-        console.log($Ddatasets);
-        console.log($Edatasets);
-
+        console.log($($Ddatasets));
+        console.log($($Edatasets));
 
 
         var lineData = {
@@ -410,8 +448,8 @@
                 {
                     label: "Example dataset",
                     fillColor: "rgba(225,0,0,0.1)",//"rgba(220,220,220,0.5)",
-                    strokeColor: "rgba(220,220,220,1)",
-                    pointColor: "rgba(220,220,220,1)",
+                    strokeColor: "rgba(225,0,0,0.3)",
+                    pointColor: "rgba(225,0,0,0.3)",
                     pointStrokeColor: "#fff",
                     pointHighlightFill: "#fff",
                     pointHighlightStroke: "rgba(220,220,220,1)",
