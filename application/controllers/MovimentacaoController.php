@@ -12,6 +12,7 @@ class MovimentacaoController extends CI_Controller
 
         $this->load->database();// chama as configs do ../config/database.php
         $this->load->model('MovimentacaoModel');// chama o modelo CadastrarModel
+        $this->load->library('form_validation');// chama o FormValidation.
     }
 
     public function index()
@@ -19,8 +20,7 @@ class MovimentacaoController extends CI_Controller
         //Inicializando o FormValidation.
         $this->load->helper(array('form', 'url'));
 
-        $this->load->library('form_validation');
-
+        //Definindo as regras
         $this->form_validation->set_rules('nome', 'Nome', 'required');
         $this->form_validation->set_rules('descricao', 'Descrição', 'required');
         $this->form_validation->set_rules('tipo', 'Tipo', 'required');
@@ -29,15 +29,28 @@ class MovimentacaoController extends CI_Controller
         $this->form_validation->set_rules('frequencia', 'Frequencia', 'required');
         $this->form_validation->set_rules('parcelas', 'Parcelas', 'required|numeric');
 
+        //Definindo as menssagens
         $this->form_validation->set_message('required', 'O campo %s é obrigatório.');
         $this->form_validation->set_message('numeric', 'O campo %s deve conter um número.');
 
-        //$this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
-
         if ($this->form_validation->run() == FALSE) {
-            //$data['response'] = json_encode(['status' => 'ERROR', 'title' => 'Error', 'message' => 'Falha ao enviar seu formulário.']);
-            //$this->load->view('formMovimentacao', $data);
-            $this->load->view('formMovimentacao');
+            if (isset($_POST['nome'])) {
+
+                $data['response'] = json_encode([
+                    'status' => 'ERROR',
+                    'title' => 'Error',
+                    'message' => 'Falha ao enviar seu formulário.'
+                ]);
+
+            } else {
+
+                $data['response'] = json_encode([
+                    'status' => 'SUCCESS',
+                    'title' => 'Movimentações',
+                    'message' => 'Cadastre uma nova movimentação.'
+                ]);
+            }
+            $this->template->load('content/default/_layout', 'content/movimentacoes/index', $data);
         } else {
             $this->store();
         }
@@ -45,8 +58,11 @@ class MovimentacaoController extends CI_Controller
 
     public function store()
     {
+        //Convertendo a data de vencimento
         $dataPT = explode('/', $_POST['vencimento']);
         $dataEN = $dataPT[2] . '-' . $dataPT[1] . '-' . $dataPT[0];
+
+        //Objeto do modelo de movimentação
         $data = [
             'idUsuario' => $this->session->userdata('id'),
             'nome' => $_POST['nome'],
@@ -60,9 +76,13 @@ class MovimentacaoController extends CI_Controller
 
         $this->MovimentacaoModel->create($data);
 
-        $data['movimentacoes'] = $this->MovimentacaoModel->getMovimentacoes($this->session->userdata('id'));
-        $data['response'] = json_encode(['status' => 'SUCCESS', 'title' => 'Sucesso', 'message' => 'Movimentação cadastrado com sucesso']);
-        $this->load->view('formMovimentacao', $data);
+        $data['response'] = json_encode([
+            'status' => 'SUCCESS',
+            'title' => 'Sucesso',
+            'message' => 'Movimentação cadastrado com sucesso'
+        ]);
+
+        $this->template->load('content/default/_layout', 'content/movimentacoes/index', $data);
     }
 
     public function delete()
@@ -77,6 +97,6 @@ class MovimentacaoController extends CI_Controller
             'movimentacoes' => $this->MovimentacaoModel->getMovimentacoes($this->session->userdata('id'))
         ]);
 
-        $this->load->view('home', $data);
+        $this->template->load('content/default/_layout', 'content/home/index', $data);
     }
 }

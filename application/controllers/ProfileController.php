@@ -23,16 +23,13 @@ class ProfileController extends CI_Controller
             'title' => 'Bem vindo ao Dynado',
             'message' => 'Controle de Finanças'
         ]);
-        $this->load->view('profile', $data);//chama a tela do perfil
 
+        $this->template->load('content/default/_layout', 'content/profile/index', $data);//chama a tela do profile
     }
 
     public function upload()
     {
         //Configurações necessárias para fazer upload do arquivo
-
-        //die(print_r($_GET['arquivo']));
-
         $config['upload_path'] = './upload/';//Pasta onde será feito o upload
         $config['allowed_types'] = 'gif|jpg|png';//Tipos suportados
         $config['max_size'] = '1000000';//Configurando atributos do arquivo imagem que iremos receber
@@ -43,7 +40,7 @@ class ProfileController extends CI_Controller
 
         $this->upload->do_upload('arquivo');
 
-        die(print_r($this->upload->display_errors()));
+        //falta alterar usuario no banco e retorna a view do profile com response de sucesso.
     }
 
     public function editar()

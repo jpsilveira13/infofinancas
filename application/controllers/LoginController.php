@@ -13,12 +13,11 @@ class LoginController extends CI_Controller
 
     public function index()
     {
-        //var_dump($this->session->userdata('id'));
-        $this->load->view('login');
+        $this->load->view('content/login/index');
     }
 
     public function registrar()
     {
-        $this->load->view('register');
+        $this->load->view('content/register/index');
     }
 }

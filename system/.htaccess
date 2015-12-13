@@ -2,7 +2,7 @@
 RewriteEngine On
 RewriteBase /
 
-#Remove o acesso a pasta system
+#Remove o login a pasta system
 RewriteCond %{REQUEST_URI} ^system.*
 
 #Redireciona /index.php/nomedocontroller/ to /nomedocontroller/função/

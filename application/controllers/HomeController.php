@@ -19,6 +19,7 @@ class HomeController extends CI_Controller
     public function index()//padrão para chamar a home
     {
         if ($this->session->userdata('id')) {
+
             $data['movimentacoes'] = $this->MovimentacaoModel->getMovimentacoes($this->session->userdata('id'));
             $data['response'] = json_encode([
                 'status' => 'SUCCESS',
@@ -27,15 +28,17 @@ class HomeController extends CI_Controller
                 'movimentacoes' => $this->MovimentacaoModel->getMovimentacoes($this->session->userdata('id'))
             ]);
 
-            $this->load->view('home', $data);
+            $this->template->load('content/default/_layout', 'content/home/index', $data);
+
         } else {
+
             $data['response'] = json_encode([
                 'status' => 'SUCCESS',
                 'title' => 'Bem vindo ao Dynado',
-                'message' => 'Controle de Finanças',
-                'movimentacoes' => $this->MovimentacaoModel->getMovimentacoes($this->session->userdata('id'))
+                'message' => 'Controle de Finanças'
             ]);
-            $this->load->view('login', $data);
+
+            $this->load->view('content/login/index', $data);
         }
     }
 
@@ -46,7 +49,9 @@ class HomeController extends CI_Controller
         $usuario = $this->LoginModel->buscaPorEmailSenha($data['email'], $data['senha']); // acessa a função buscaPorEmailSenha do modelo
 
         if ($usuario) {
+
             $this->session->set_userdata($usuario);//cria a session
+
             $data['movimentacoes'] = $this->MovimentacaoModel->getMovimentacoes($this->session->userdata('id'));
             $data['response'] = json_encode([
                 'status' => 'SUCCESS',
@@ -54,18 +59,32 @@ class HomeController extends CI_Controller
                 'message' => 'Controle de Finanças',
                 'movimentacoes' => $this->MovimentacaoModel->getMovimentacoes($this->session->userdata('id'))
             ]);
-            $this->load->view('home', $data);//chama a tela inicial
+
+            $this->template->load('content/default/_layout', 'content/home/index', $data);//chama a tela inicial
+
         } else {
-            $data['response'] = json_encode(['status' => 'ERROR', 'title' => 'Error', 'message' => 'Falha ao realizar login']);
-            $this->load->view('login', $data);
+
+            $data['response'] = json_encode([
+                'status' => 'ERROR',
+                'title' => 'Error',
+                'message' => 'Falha ao realizar login'
+            ]);
+
+            $this->load->view('content/login/index', $data);
         }
     }
 
     public function logout()
     {
         $this->session->sess_destroy();
-        $data['response'] = json_encode(['status' => 'SUCCESS', 'title' => 'Sucesso', 'message' => 'Desconectado com sucesso']);
-        $this->load->view('login', $data);
+
+        $data['response'] = json_encode([
+            'status' => 'SUCCESS',
+            'title' => 'Sucesso',
+            'message' => 'Desconectado com sucesso'
+        ]);
+
+        $this->load->view('content/login/index', $data);
     }
 
     public function criarConta()//para criar uma nova conta
@@ -76,15 +95,23 @@ class HomeController extends CI_Controller
 
         $this->CadastrarModel->inserir($data);//chama a função inserir e passa os dados como parametros
 
-        $data['response'] = json_encode(['status' => 'SUCCESS', 'title' => 'Sucesso', 'message' => 'Conta criada com sucesso']);
-        $this->load->view('login', $data);//carrega a view home
+        $data['response'] = json_encode([
+            'status' => 'SUCCESS',
+            'title' => 'Sucesso',
+            'message' => 'Conta criada com sucesso'
+        ]);
+
+        $this->load->view('content/login/index', $data);//carrega a view home
     }
 
     public function registrar()
     {
-        $data['response'] = json_encode(['status' => 'SUCCESS', 'title' => 'Sucesso', 'message' => 'Crie sua conta']);
-        $this->load->view('register', $data);
+        $data['response'] = json_encode([
+            'status' => 'SUCCESS',
+            'title' => 'Sucesso',
+            'message' => 'Crie sua conta'
+        ]);
+
+        $this->load->view('content/register/index', $data);
     }
-
-
 }
