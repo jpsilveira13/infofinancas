@@ -17,7 +17,16 @@ class UpdateModel extends CI_Model
         $this->db->where('id', $data['id']);
         $this->db->update('usuario', $data);
 
-        $this->load->view('profile');
+        $data_msg['response'] = json_encode([
+            'status' => 'SUCCESS',
+            'title' => 'Pronto',
+            'message' => 'Dados Editados'
+        ]);
+
+        $this->session->set_userdata($data);//cria a session
+
+
+        $this->template->load('content/default/_layout', 'content/profile/index', $data_msg);
     }
 
     public function setDescricao($data)
@@ -25,6 +34,14 @@ class UpdateModel extends CI_Model
         $this->db->where('id', $data['id']);
         $this->db->update('usuario', $data);
 
-        $this->load->view('profile');
+        $data_msg['response'] = json_encode([
+            'status' => 'SUCCESS',
+            'title' => 'Pronto',
+            'message' => 'Descrição Atualizada'
+        ]);
+
+        $this->session->set_userdata($data);//cria a session
+
+        $this->template->load('content/default/_layout', 'content/profile/index', $data_msg);
     }
 }

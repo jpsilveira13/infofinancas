@@ -21,13 +21,13 @@ class ProfileController extends CI_Controller
         $data['response'] = json_encode([
             'status' => 'SUCCESS',
             'title' => 'Bem vindo ao Dynado',
-            'message' => 'Controle de Finanças'
+            'message' => 'Perfil'
         ]);
 
         $this->template->load('content/default/_layout', 'content/profile/index', $data);//chama a tela do profile
     }
 
-    public function upload()
+    public function upload()//imagem no banco
     {
         //Configurações necessárias para fazer upload do arquivo
         $config['upload_path'] = './upload/';//Pasta onde será feito o upload
