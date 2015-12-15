@@ -58,7 +58,7 @@
                                                 <span class="input-group-addon">
                                                     <i class="fa fa-calendar"></i>
                                                 </span>
-                                <input type="data" name="vencimento" class="form-control" value="03/04/2014"
+                                <input type="data" name="vencimento" class="form-control" placeholder="03/04/2014"
                                        id="vencimento">
                             </div>
                         </div>

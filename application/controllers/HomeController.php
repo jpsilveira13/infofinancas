@@ -92,6 +92,7 @@ class HomeController extends CI_Controller
         $data['nome'] = $_POST['nome'];//recebe o nome digitado
         $data['email'] = $_POST['email'];//recebe o email digitado
         $data['senha'] = md5($_POST['senha']);//recebe a senha digitada
+        $data['fotoPerfil'] = '/assets/img/icon-user-default.jpg';
 
         $this->CadastrarModel->inserir($data);//chama a função inserir e passa os dados como parametros
 

@@ -40,6 +40,8 @@ class ProfileController extends CI_Controller
 
         $this->upload->do_upload('arquivo');
 
+        $this->setFoto($this->upload->data('file_name'));
+
         //falta alterar usuario no banco e retorna a view do profile com response de sucesso.
     }
 
@@ -60,4 +62,15 @@ class ProfileController extends CI_Controller
 
         $this->UpdateModel->setDescricao($data);
     }
+
+    public function setFoto($fotoEnd)
+    {
+        $foto = $fotoEnd;
+
+        $data['id'] = $this->session->userdata('id');//pega o id da session atual
+        $data['fotoPerfil'] = "/upload/" . $foto ;//recebe a descrição digitada
+
+        $this->UpdateModel->setDescricao($data);
+    }
+
 }

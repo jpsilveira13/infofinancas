@@ -15,7 +15,8 @@
                     <button type="button" class="no-borders no-margins no-padding" data-toggle="modal"
                             data-target="#inserirModal">
                         <img alt="image" class="img-responsive img-preview "
-                             src="<?php echo base_url() ?>/assets/img/icon-user-default.jpg">
+                             src="<?php echo base_url() ?><?php echo $_SESSION['fotoPerfil'];?>"
+
                         <!-- imagem de perfil -->
                     </button>
 
