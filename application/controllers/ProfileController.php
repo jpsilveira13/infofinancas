@@ -14,6 +14,7 @@ class ProfileController extends CI_Controller
         $this->load->database();// chama as configs do ../config/database.php
         $this->load->model('UpdateModel');// chama o modelo CadastrarModel
         $this->load->helper(array('form'));
+        $this->load->library('image_lib');
     }
 
     public function index()//para login normal
@@ -68,23 +69,29 @@ class ProfileController extends CI_Controller
         $foto = $fotoEnd;
 
         $data['id'] = $this->session->userdata('id');//pega o id da session atual
-        $data['fotoPerfil'] = "/upload/" . $foto ;//recebe a descrição digitada
+        $data['fotoPerfil'] = "/upload/" . $foto;//recebe a descrição digitada
 
-        $this->UpdateModel->setDescricao($data);
+        $this->fotoSmall($foto);
+
+        $this->UpdateModel->setFoto($data);
     }
 
-    /*public function fotoSmall()
+    public function fotoSmall($foto)
     {
         $config['image_library'] = 'gd2';
-        $config['source_image']	= $this->Session('fotoPerfil');
+        $config['source_image'] = '/upload/' . $foto;
         $config['create_thumb'] = TRUE;
         $config['maintain_ratio'] = TRUE;
-        $config['width']	= 75;
-        $config['height']	= 50;
+        $config['width'] = 75;
+        $config['height'] = 50;
 
         $this->load->library('image_lib', $config);
 
-        $this->image_lib->resize();
-    }*/
+        if (!$this->image_lib->resize()) {
+            echo $this->image_lib->display_errors();
+        }else{
+            $this->image_lib->resize();
+        }
+    }
 
 }

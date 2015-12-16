@@ -31,7 +31,7 @@
 
                         <!-- Foto Perfil -->
                         <span><img alt="image" class="img-circle"
-                                   src="<?php echo base_url() ?><?php echo $_SESSION['fotoPerfil']; ?>"/></span>
+                                   src="<?php echo base_url() ?>/upload/profile_small.png"/></span>
 
                         <!-- Dados Perfil -->
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
