@@ -58,7 +58,7 @@
                                                 <span class="input-group-addon">
                                                     <i class="fa fa-calendar"></i>
                                                 </span>
-                                <input type="data" name="vencimento" class="form-control" placeholder="03/04/2014"
+                                <input type="text" name="vencimento" class="form-control" placeholder="03/04/2014"
                                        id="vencimento">
                             </div>
                         </div>
@@ -123,13 +123,13 @@
         //para ver os dados e testar se deu certo use o console.log:
         console.log($response);
 
-        $('#vencimento').datepicker({
+        /*$('#vencimento').datepicker({
             todayBtn: "linked",
             keyboardNavigation: false,
             forceParse: false,
             calendarWeeks: true,
             autoclose: true
-        });
+        });*/
 
         setTimeout(function () {
             toastr.options = {
