@@ -59,4 +59,6 @@ class UpdateModel extends CI_Model
 
         $this->template->load('content/default/_layout', 'content/profile/index', $data_msg);
     }
+
+
 }

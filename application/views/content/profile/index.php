@@ -15,7 +15,7 @@
                     <button type="button" class="no-borders no-margins no-padding" data-toggle="modal"
                             data-target="#inserirModal">
                         <img alt="image" class="img-responsive img-preview "
-                             src="<?php echo base_url() ?><?php echo $_SESSION['fotoPerfil'];?>"
+                             src="<?php echo base_url() ?><?php echo $_SESSION['fotoPerfil']; ?>"
 
                         <!-- imagem de perfil -->
                     </button>
@@ -148,7 +148,7 @@
 
                                         <div class="col-lg-10">
                                             <input name="nome" type="text"
-                                                   value="<?php echo $this->session->userdata('nome') ?>"
+                                                   placeholder="<?php echo $this->session->userdata('nome') ?>"
                                                    class="form-control">
                                         </div>
                                     </div>
@@ -159,7 +159,7 @@
 
                                         <div class="col-lg-10">
                                             <input name="email" type="text"
-                                                   value="<?php echo $this->session->userdata('email') ?>"
+                                                   placeholder="<?php echo $this->session->userdata('email') ?>"
                                                    class="form-control">
                                         </div>
                                     </div>
@@ -170,7 +170,7 @@
 
                                         <div class="col-lg-10">
                                             <input name="senha" type="text"
-                                                   value="<?php echo $this->session->userdata('senha') ?>"
+                                                   placeholder="<?php echo $this->session->userdata('senha') ?>"
                                                    class="form-control">
                                         </div>
                                     </div>
@@ -216,8 +216,8 @@
                         <label class="col-lg-2 control-label">Senha</label>
 
                         <div class="col-lg-10">
-                            <input id="senha" type="text"
-                                   placeholder="<?php echo $this->session->userdata('senha') ?>"
+                            <input id="senha" type="password"
+                                   value="<?php echo $this->session->userdata('senha')?>"
                                    class="form-control" disabled>
                         </div>
                     </div>
