@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Dynado Finanças</title>
+    <title>Info Finanças</title>
 
     <?php include('_style.php'); ?>
 
@@ -67,7 +67,7 @@
     </nav>
 
     <!-- Dashboard -->
-    <div id="page-wrapper" class="gray-bg" Style="min-height: 1000px">
+    <div id="page-wrapper" class="purple-bg" Style="min-height: 1000px">
 
         <!-- Menu Topo -->
         <div class="row border-bottom white-bg">
@@ -80,7 +80,7 @@
                 <ul class="nav navbar-top-links navbar-left">
                     <li>
                         <a href="<?php echo base_url() ?>HomeController/index?">
-                            Dynado Finanças
+                            Info Finanças
                         </a>
                     </li>
                 </ul>
@@ -112,7 +112,7 @@
                 Controle de Finanças
             </div>
             <div>
-                <strong>Copyright</strong> Desenvolvimento de Aplicações Web &copy; 2015
+                <strong>Copyright</strong> Desenvolvimento de Aplicações Web &copy; 2017
             </div>
         </div>
 

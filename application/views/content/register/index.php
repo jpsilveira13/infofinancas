@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Dynado | Register</title>
+    <title>Info Finanças | Registro</title>
 
     <link href="<?php echo base_url()?>/assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url()?>/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -25,7 +25,7 @@
 
 </head>
 
-<body class="gray-bg">
+<body>
 
 <div class="middle-box text-center loginscreen  animated fadeInDown">
     <div>
@@ -34,8 +34,8 @@
             <a href="<?php echo base_url()?>"> <img src="<?php echo base_url()?>assets/img/Logo - 2short.png" style="margin-left: -105px;"> </a>
 
         </div>
-        <h3>Cadastre-se no Dynado.</h3>
-        <p>Crie uma conta para usar o Dynado.</p>
+        <h3>Cadastre-se no Info.</h3>
+        <p>Crie uma conta para usar acessar o sistema.</p>
         <form class="m-t" role="form" action="<?php echo base_url()?>HomeController/criarConta" method="post">
             <div class="form-group">
                 <input name="nome" type="text" class="form-control" placeholder="Nome" required="">
@@ -52,7 +52,7 @@
             <button type="submit" class="btn btn-primary block full-width m-b">Cadastrar</button>
 
         </form>
-        <p class="m-t"> <small>Dynado Finanças &copy; 2015</small> </p>
+        <p class="m-t"> <small>Info Finanças &copy; 2017</small> </p>
     </div>
 </div>
 

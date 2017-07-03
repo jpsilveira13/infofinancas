@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Dynado | Login</title>
+    <title>Info Finanças | Login</title>
 
     <link href="<?php echo base_url() ?>/assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url() ?>/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -31,10 +31,10 @@
     <div>
         <div>
 
-            <img src="<?php echo base_url() ?>assets/img/Logo - 2short.png" style="margin-left: -105px;">
+            <img src="<?php echo base_url() ?>assets/img/info-logo.png" style="margin-left: -105px;">
 
         </div>
-        <h3>Bem vindo ao Dyando Finanças</h3>
+        <h3>Bem vindo ao Info Finanças</h3>
 
         <p>
             Um lugar para controlar seus gastos de forma efetiva e administrar o seu dinheiro.
@@ -62,7 +62,7 @@
             <a class="btn btn-sm btn-white btn-block" href="<?php echo base_url() ?>HomeController/registrar">Cadastre-se</a>
         </form>
         <p class="m-t">
-            <small>Dynado Finanças &copy; 2015</small>
+            <small>Info Finanças &copy; 2017</small>
         </p>
     </div>
 </div>

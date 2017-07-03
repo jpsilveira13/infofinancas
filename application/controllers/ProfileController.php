@@ -21,7 +21,7 @@ class ProfileController extends CI_Controller
     {
         $data['response'] = json_encode([
             'status' => 'SUCCESS',
-            'title' => 'Bem vindo ao Dynado',
+            'title' => 'Bem vindo ao Info',
             'message' => 'Perfil'
         ]);
 

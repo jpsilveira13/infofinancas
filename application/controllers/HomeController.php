@@ -23,7 +23,7 @@ class HomeController extends CI_Controller
             $data['movimentacoes'] = $this->MovimentacaoModel->getMovimentacoes($this->session->userdata('id'));
             $data['response'] = json_encode([
                 'status' => 'SUCCESS',
-                'title' => 'Bem vindo ao Dynado',
+                'title' => 'Bem vindo ao Info',
                 'message' => 'Controle de Finanças',
                 'movimentacoes' => $this->MovimentacaoModel->getMovimentacoes($this->session->userdata('id'))
             ]);
@@ -34,7 +34,7 @@ class HomeController extends CI_Controller
 
             $data['response'] = json_encode([
                 'status' => 'SUCCESS',
-                'title' => 'Bem vindo ao Dynado',
+                'title' => 'Bem vindo ao Info',
                 'message' => 'Controle de Finanças'
             ]);
 
@@ -55,7 +55,7 @@ class HomeController extends CI_Controller
             $data['movimentacoes'] = $this->MovimentacaoModel->getMovimentacoes($this->session->userdata('id'));
             $data['response'] = json_encode([
                 'status' => 'SUCCESS',
-                'title' => 'Bem vindo ao Dynado',
+                'title' => 'Bem vindo ao Info',
                 'message' => 'Controle de Finanças',
                 'movimentacoes' => $this->MovimentacaoModel->getMovimentacoes($this->session->userdata('id'))
             ]);
